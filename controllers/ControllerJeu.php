@@ -43,6 +43,6 @@
            $conju_temps= '';
            $param = $manager->getphraseTemps($conju_temps);
            
-           echo $twig->render('Jeu.twig', ['phraseTemps' => $param[0]]);
+           echo $twig->render('Jeu.twig', ['phrases' => $param[0]]);
         }
     }    
