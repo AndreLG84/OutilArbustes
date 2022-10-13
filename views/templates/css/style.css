@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display: block;}
+body { line-height: 1;}
+ol,ul { list-style: none;}
+blockquote,q { quotes: none;}
+blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none;}
+table { border-collapse: collapse; border-spacing: 0;}
+
+body {
+    background-color: white;
+}
+/*block header*/
+.nav-user {
+    min-height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10%;
+}
+.nav-user > a img {
+    width: 100px;
+    height: 100px;
+}
+.outilTitre > h1 {
+    font-size: 2.5rem;
+    font-family: 'junge';
+    letter-spacing: 2px;
+    color: #464C6A;
+    text-shadow: 2px 5px 10px green;
+}
+
+.nav-menu > li {
+    list-style-type: none;
+    font-size: 1.4rem;
+    display: block;
+    padding: 8px 15px;
+    background-color: rgba(34, 34, 98, 0.607);
+    color: white;
+    border-radius: 5px;
+}
+/* block footer*/
+footer {
+    min-height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+/*section homepage*/
+.Lancer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #87de7191;
+    padding: 25px 0;
+}
+.Lancer > h1 {
+    width: 100%;
+    font-size: 2.5rem;
+    margin: 20px 0px;
+    text-align: center;
+    color: #464C6A;
+    font-family: judson;
+}
+.Lancer > .form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    height: auto;
+    width: 70%;
+    background-color: #37465cb7;
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px whitesmoke;
+}
+.Choix_phrases {
+    height: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+}
+.Choix_phrases > .select {
+    width: 250px;
+    min-height: 150px;
+    margin: 10px 20px;
+    padding: 1.2%;
+    border-radius: 5px;
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.select > label {
+    margin: 5px 10px;
+    font-size: 1.8rem;
+}
+.select > input {
+    width: 25px;
+    height: 25px;
+    margin: 5px 10px;
+    font-size: 1.8rem;
+}
+form > .submit-homepage {
+    margin: 20px auto;
+    height: 50px;
+    width: 30%;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    border: 2px solid rgba(255, 0, 0, 0.717);
+    background-color: #0f9c0dc7;
+    color: whitesmoke;
+}
+/*page temps*/
+form > .Choix_temps {
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.Choix_temps > .conju_tps {
+    height: 50px;
+    width: 40%;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #37465ce8;
+    font-size: 1.8rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 2%;
+    background-color: #F3DF28;
+}
+form > .submit-Commencer {
+    margin: 20px auto;
+    height: 50px;
+    width: 30%;
+    font-size: 1.7rem;
+    border-radius: 5px;
+    border: 2px solid rgba(255, 0, 0, 0.717);
+    background-color: #0f9c0dc7;
+    color: whitesmoke;
+}
+
+/*Page Jeu*/
+.Jeu {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #87de7191;
+}
+.temps_niveau {
+    background-color: #37465cb7;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.temps_niveau > p {
+    color: white;
+    font-size: 2rem;
+}
+.phrase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    width: 70%;
+    height: 150px;
+    margin: 50px 0px 30px 0px;
+}
+.phrase > p {
+    font-size: 2.5rem;
+}
+.reponses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    width: 70%;
+    height: 50px;
+    margin: 20px 0px 20px 0px;
+}
+.reponses > p {
+    font-size: 2rem;
+}
+.suivant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #37465cb7;
+}
+.suivant > button {
+    margin: 20px 0px;
+    font-size: 2rem;
+    padding:1% 1.5%;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: #F3DF28;
+    color:#25AC33;
+}
+
+/*Admin*/
+.PageAdmin {
+    height: auto;
+    min-height: 400px;
+    background-color:  #37465cb7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.BlockInsert, .BlocAfficher {
+    margin: 30px 0px;
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+}
+.BlockInsert > h2, .BlocAfficher > h2 {
+    text-align: left;
+    line-height: 4rem;
+    font-size: 2rem;
+    margin: 10px 0px;
+    padding-left: 30px;
+    background-color: #87de7191;
+}
+.BlockInsert > form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 25px;
+}
+.form-edit > .label-edit, .input-edit {
+    width: 60%;
+    height: 30px;
+    margin: 0.5%;
+}
+.form-edit > .btn-edit {
+    width: 60%;
+    margin: 2%;
+    padding: 1%;
+    font-size: 1.4rem;
+    color: white;
+    background-color: #C05050;
+    box-shadow: none;
+    border-radius: 5px;
+}
+.BlocAfficher > .Update {
+    height: auto;
+    background-color: #464c6a59;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 15px;
+    padding: 1%;
+}
+.Update > p {
+    margin: 1% 1%;
+    padding: 1%;
+    width: 90%;
+    background-color: white;
+    font-size: 1.6rem;
+}

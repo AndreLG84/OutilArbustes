@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./views/templates/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Judson" />
+    <title>La conjugaison | {% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    {% block header %} 
+        <header>
+            <nav class="nav-user">
+                <a href="/" class="">
+                    <img src="./views/templates/images/retour.png" alt="Retour" class="retour">
+                </a>
+                <div class="outilTitre"><h1>Conjugaison<h1></div>
+                <ul class="nav-menu">
+                    <li>CDI</li>
+                </ul>
+            </nav>
+        </header>
+    {% endblock %}
+
+    {{ dump(phraseTemps) }}
+    <section class="Jeu">
+    {% for data in phraseTemps %}
+
+        <div class="temps_niveau">
+            <p>Temps:{{ data.conju_temps }}</p>
+            <p>Niveau:{{ data.conju_niveau }}</p>
+        </div>
+        <div class="phrase">
+            <p>{{ data.conju_phrase }}.</p>
+        </div>
+        <div class="reponses">
+            <p>{{ data.conju_reponses }}</p>
+        </div>
+        <div class="suivant">
+            <button>Suivant</button>
+        </div>
+
+    {% endfor %}
+    </section>
+    
+    {% block footer %}
+    <footer>
+    </footer>
+    {% endblock %}
+    <script src="./views/templates/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./views/templates/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Judson" />
+    <title>La conjugaison | {% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    {% block header %} 
+        <header>
+            <nav class="nav-user">
+                <a href="/" class="">
+                    <img src="./views/templates/images/retour.png" alt="Retour" class="retour">
+                </a>
+                <div class="outilTitre"><h1>Conjugaison<h1></div>
+                <ul class="nav-menu">
+                    <li>CDI</li>
+                </ul>
+            </nav>
+        </header>
+    {% endblock %}
+    <section class="Lancer">
+        <h1>Choisir le temps</h1>
+
+        <form action="./Jeu" method="POST" class="form"> 
+            <div class="Choix_temps">
+            {% for data in conju_temps %}
+                <div class="conju_tps">
+                    <label for="conju_temps" class="">{{ data.conju_temps }}</label>
+                    <input type="radio" name="conju_temps" id="" class="input">
+                </div>
+            {% endfor %}
+            </div>
+        
+            <input type="submit" name="submit" value="C'est parti" id="" class="submit-Commencer">
+
+        </form>
+    </section>
+    {% block footer %}
+    <footer>
+    </footer>
+    {% endblock %}
+
+
+    <script src="./views/templates/js/main.js"></script>
+</body>
+</html>

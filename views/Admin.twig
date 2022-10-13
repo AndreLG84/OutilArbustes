@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./views/templates/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Judson" />
+    <title>La conjugaison | {% block title %} {% endblock %}</title>
+</head>
+
+<body>
+    {% block header %} 
+        <header>
+            <nav class="nav-user">
+                <a href="/" class="">
+                    <img src="./views/templates/images/retour.png" alt="Retour" class="retour">
+                </a>
+                <div class="outilTitre"><h1>Conjugaison<h1></div>
+                <ul class="nav-menu">
+                    <li>CDI</li>
+                </ul>
+            </nav>
+        </header>
+    {% endblock %}
+    <section class="PageAdmin">
+        <section class="BlockInsert">
+            <h2>Ajouter</h2>
+
+            <form action="/Admin" method="POST" class="form-edit">
+
+                <label for="conju_phrase" class="label-edit">Entrer une phrase</label>
+                <input type="text" name="conju_phrase" class="input-edit" placeholder="Je joue avec les filles">
+
+                <label for="conju_reponses" class="label-edit">Entrer les réponses</label>
+                <input type="text" name="conju_reponses" class="input-edit" placeholder="joue, joues, jouons, jouez, jouent">
+
+                <label for="conju_reponse" class="label-edit">Numéro de la reponse</label>
+                <select name="conju_reponse" class="input-edit">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="conju_niveau" class="label-edit">Choisir le niveau</label>
+                <select name="conju_niveau" class="input-edit">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+
+                <label for="conju_temps" class="label-edit">Choisir le temps</label>
+                <select name="conju_temps" class="input-edit">
+                    <option value="Passé composé">Passé composé</option>
+                    <option value="Imparfait">Imparfait</option>
+                    <option value="Présent">Présent</option>
+                    <option value="Futur">Futur</option>
+                </select>
+
+                <input type="submit" value="Ajouter" class="btn-edit" id="submit-edit">
+            </form>
+
+        </section>
+        {{ dump(phraseclasse) }}
+        
+        <section class="BlocAfficher">
+            <h2>Modifier</h2>
+            
+            <div class="Update">
+            {% for data in phraseclasse %}
+                <p>{{ data.conju_phrase }}</p>
+            {% endfor %}
+            </div>
+            
+
+        </section>
+
+    </section>
+</body>
+</html>
