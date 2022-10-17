@@ -14,3 +14,8 @@ xhr.onreadystatechange = function () {
 xhr.send()
 
 
+document.getElementById("clickreponses").addEventListener("click", showReponse);
+
+function showReponse() {
+  document.getElementById("demo").innerHTML = display();
+}

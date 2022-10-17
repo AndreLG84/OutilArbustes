@@ -46,8 +46,12 @@ body {
 footer {
     min-height: 200px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
+}
+footer> img {
+    width: 150px;
+    height: 120px;
 }
 /*section homepage*/
 .Lancer {
@@ -178,7 +182,7 @@ form > .submit-Commencer {
     justify-content: center;
     background-color: white;
     text-align: center;
-    width: 70%;
+    width: 80%;
     height: 150px;
     margin: 50px 0px 30px 0px;
 }
@@ -189,10 +193,12 @@ form > .submit-Commencer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: white;
     text-align: center;
-    width: 70%;
-    height: 50px;
+    width: 80%;
+    min-height: 50px;
+    height: auto;
     margin: 20px 0px 20px 0px;
 }
 .reponses > p {

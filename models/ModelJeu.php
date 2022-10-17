@@ -39,8 +39,8 @@
             //phrase par temps
             if (isset($_POST['submit'])) {
 
-                // $conju_temps = $_POST['conju_temps'];
-                $conju_temps = isset($_POST['conju_temps']) ? $_POST['conju_temps'] : null;
+                $conju_temps = $_POST['conju_temps'];
+                // $conju_temps = isset($_POST['conju_temps']) ? $_POST['conju_temps'] : null;
 
                 $req3 = $db->prepare("SELECT `conju_phrase`,`conju_reponses`, `conju_reponse`, `conju_niveau`, `conju_temps` FROM `cdi_conju` WHERE `conju_temps` = :conju_temps ");
 
@@ -48,16 +48,16 @@
 
                 $req3 -> execute();
                 
-                $phrases = [];
+                // $phrases = [];
 
-                while ($data = $req3->fetch(PDO::FETCH_ASSOC)) {
-                    $phrases[] = new Cdi_conju($data);
-                };
+                // while ($data = $req3->fetch(PDO::FETCH_ASSOC)) {
+                //     $phrases[] = new Cdi_conju($data);
+                // };
                 
                 
-                return array($phrases);
+                // return array($phrases);
 
-                // return ($req3->fetchALL(PDO::FETCH_ASSOC));
+                return ($req3->fetchALL(PDO::FETCH_ASSOC));
             }
         }
     }

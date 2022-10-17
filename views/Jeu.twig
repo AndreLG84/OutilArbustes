@@ -29,14 +29,18 @@
     {% for data in phrases %}
 
         <div class="temps_niveau">
-            <p>Temps:{{ data.conju_temps }}</p>
-            <p>Niveau:{{ data.conju_niveau }}</p>
+            <p>Temps:&nbsp;{{ data.conju_temps }}</p>
+            <p>Niveau:&nbsp;{{ data.conju_niveau }}</p>
         </div>
         <div class="phrase">
-            <p></p>
+            <p>{{ data.conju_phrase }}</p>
         </div>
         <div class="reponses">
+        
             <p>{{ data.conju_reponses }}</p>
+            <span id= "demo">{{ data.conju_reponse }}</span>
+            <button id="clickreponses">{{ data.conju_reponses }}</button>
+
         </div>
         <div class="suivant">
             <button>Suivant</button>
