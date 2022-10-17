@@ -36,23 +36,25 @@
 
         public function getphraseTemps($conju_temps){
             $db = $this->getDb();
-
             //phrase par temps
             if (isset($_POST['submit'])) {
 
-                $conju_temps = $_POST['conju_temps'];
-                // $conju_temps = isset($_POST['conju_temps']) ? $_POST['conju_temps'] : null;
+                // $conju_temps = $_POST['conju_temps'];
+                $conju_temps = isset($_POST['conju_temps']) ? $_POST['conju_temps'] : null;
 
-                $req3 = $db->prepare('SELECT `conju_phrase`,`conju_reponses`, `conju_reponse`, `conju_niveau`, `conju_temps` FROM `cdi_conju` WHERE `conju_temps` = :conju_temps ');
+                $req3 = $db->prepare("SELECT `conju_phrase`,`conju_reponses`, `conju_reponse`, `conju_niveau`, `conju_temps` FROM `cdi_conju` WHERE `conju_temps` = :conju_temps ");
 
-                $req3->bindParam('conju_temps', $conju_temps, PDO::PARAM_STR);
+                $req3->bindParam(':conju_temps', $conju_temps, PDO::PARAM_STR);
 
                 $req3 -> execute();
-                var_dump($req3);
-                $data = $req3->fetch(PDO::FETCH_ASSOC);
+                
+                $phrases = [];
 
-                $phrases = new Cdi_conju($data);
-
+                while ($data = $req3->fetch(PDO::FETCH_ASSOC)) {
+                    $phrases[] = new Cdi_conju($data);
+                };
+                
+                
                 return array($phrases);
 
                 // return ($req3->fetchALL(PDO::FETCH_ASSOC));

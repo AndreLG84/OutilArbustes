@@ -40,9 +40,9 @@
 
            $manager = new ModelJeu();
            
-           $conju_temps= '';
+           $conju_temps = $_POST;
            $param = $manager->getphraseTemps($conju_temps);
            
-           echo $twig->render('Jeu.twig', ['phrases' => $param[0]]);
+           echo $twig->render('Jeu.twig', ['phrases' => $param]);
         }
     }    

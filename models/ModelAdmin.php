@@ -39,14 +39,14 @@
             $req = $db->prepare("SELECT `conju_id`, `conju_phrase` FROM `cdi_conju` WHERE `conju_classe` = 1 ");
             $req -> execute();
 
-            return ($req->fetchALL(PDO::FETCH_ASSOC));
+            // return ($req->fetchALL(PDO::FETCH_ASSOC));
 
-            // $arrayphrase = [];
+            $arrayphrase = [];
 
-            // while($data = $req->fetch(PDO::FETCH_ASSOC)){
-            //     $arrayphrase[] = new Cdi_conju($data);
-            // }
-            // return array($arrayphrase);
+            while($data = $req->fetch(PDO::FETCH_ASSOC)){
+                $arrayphrase[] = new Cdi_conju($data);
+            }
+            return array($arrayphrase);
             
         }
     }

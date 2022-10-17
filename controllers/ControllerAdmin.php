@@ -25,7 +25,7 @@
  
             $dataphrase = $manager->getPhrases();
             
-            echo $twig->render('Admin.twig', ['phraseclasse' => $dataphrase]);
+            echo $twig->render('Admin.twig', ['arrayphrase' => $dataphrase]);
         }
 
         public static function UpdatePhraseCtrl(){

@@ -64,17 +64,16 @@
             </form>
 
         </section>
-        {{ dump(phraseclasse) }}
+        {{ dump(arrayphrase) }}
         
         <section class="BlocAfficher">
             <h2>Modifier</h2>
             
             <div class="Update">
-            {% for data in phraseclasse %}
+            {% for data in arrayphrase %}
                 <p>{{ data.conju_phrase }}</p>
             {% endfor %}
             </div>
-            
 
         </section>
 

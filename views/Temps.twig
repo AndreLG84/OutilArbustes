@@ -30,8 +30,8 @@
             <div class="Choix_temps">
             {% for data in conju_temps %}
                 <div class="conju_tps">
-                    <label for="conju_temps" class="">{{ data.conju_temps }}</label>
-                    <input type="radio" name="conju_temps" id="" class="input">
+                    <label for="{{ data.conju_temps }}" class="">{{ data.conju_temps }}</label>
+                    <input type="radio" name="{{ data.conju_temps }}" id="" class="input">
                 </div>
             {% endfor %}
             </div>
@@ -44,8 +44,6 @@
     <footer>
     </footer>
     {% endblock %}
-
-
     <script src="./views/templates/js/main.js"></script>
 </body>
 </html>
