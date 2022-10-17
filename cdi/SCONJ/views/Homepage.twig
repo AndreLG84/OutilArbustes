@@ -1,0 +1,30 @@
+{% extends 'BaseTemplate.twig' %}
+
+{% block content1 %}
+<body>
+    <section class="Lancer">
+        <h1>Bienvenue</h1>
+
+        <form action="../SCONJ/temps" method="POST" class="form"> 
+
+            <div class="Choix_phrases">
+
+                <div class="select" >
+                    <a href = "../SCONJ/temps">
+                    <label for="conju_classe" class="label-ChoixPhrases">Phrases du réseau</label>
+                    <input hidden type="radio" name="conju_classe" value="0" id="reseau" class="input" ></a>
+                </div>
+
+                <div class="select">
+                    <a href="../SCONJ/temps"><label for="conju_classe" class="label-ChoixPhrases">Phrases de l'école</label>
+                    <input hidden type="radio" name="conju_classe" value="1" id="ecole" class="input"></a>
+                </div>
+            </div>
+                
+            {# <input type="submit" name="submit" value="Valider" id="Btn-Select" class="submit-homepage"> #}
+
+        </form>
+        
+    </section>
+</body>
+{% endblock %}

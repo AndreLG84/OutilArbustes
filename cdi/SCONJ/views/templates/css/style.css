@@ -56,12 +56,13 @@ footer> img {
 /*section homepage*/
 .Lancer {
     height: auto;
+    min-height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #87de7191;
-    padding: 25px 0;
+    padding: 20px 0;
 }
 .Lancer > h1 {
     width: 100%;
@@ -100,9 +101,15 @@ footer> img {
     align-items: center;
     justify-content: center;
 }
+.Choix_phrases > .select:hover {
+    background-color: #25ac3394;
+}
+.Choix_phrases > .select:hover > a{
+    color: white;
+}
 .select > label {
     margin: 5px 10px;
-    font-size: 1.8rem;
+    height: 100%;
 }
 .select > input {
     width: 25px;
@@ -110,7 +117,13 @@ footer> img {
     margin: 5px 10px;
     font-size: 1.8rem;
 }
-form > .submit-homepage {
+.select > a {
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #464C6A;
+}
+/* form > .submit-homepage {
     margin: 20px auto;
     height: 50px;
     width: 30%;
@@ -119,7 +132,7 @@ form > .submit-homepage {
     border: 2px solid rgba(255, 0, 0, 0.717);
     background-color: #0f9c0dc7;
     color: whitesmoke;
-}
+} */
 /*page temps*/
 form > .Choix_temps {
     min-height: 300px;

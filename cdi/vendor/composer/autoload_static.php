@@ -40,17 +40,17 @@ class ComposerStaticInit3d45322143cd68638174e116df3fcf91
 
     public static $classMap = array (
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
-        'Arbustes_outil' => __DIR__ . '/../..' . '/classes/Arbustes_outil.php',
-        'Cdi_conju' => __DIR__ . '/../..' . '/classes/Cdi_conju.php',
+        'Arbustes_outil' => __DIR__ . '/../..' . '/SCONJ/classes/Arbustes_outil.php',
+        'Cdi_conju' => __DIR__ . '/../..' . '/SCONJ/classes/Cdi_conju.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'ControllerAdmin' => __DIR__ . '/../..' . '/controllers/ControllerAdmin.php',
-        'ControllerJeu' => __DIR__ . '/../..' . '/controllers/ControllerJeu.php',
-        'ControllerScores' => __DIR__ . '/../..' . '/controllers/ControllerScores.php',
-        'Model' => __DIR__ . '/../..' . '/models/Model.php',
-        'ModelAdmin' => __DIR__ . '/../..' . '/models/ModelAdmin.php',
-        'ModelJeu' => __DIR__ . '/../..' . '/models/ModelJeu.php',
-        'Scores' => __DIR__ . '/../..' . '/classes/Scores.php',
-        'Si_humain' => __DIR__ . '/../..' . '/classes/Si_humain.php',
+        'ControllerAdmin' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerAdmin.php',
+        'ControllerJeu' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerJeu.php',
+        'ControllerScores' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerScores.php',
+        'Model' => __DIR__ . '/../..' . '/SCONJ/models/Model.php',
+        'ModelAdmin' => __DIR__ . '/../..' . '/SCONJ/models/ModelAdmin.php',
+        'ModelJeu' => __DIR__ . '/../..' . '/SCONJ/models/ModelJeu.php',
+        'Scores' => __DIR__ . '/../..' . '/SCONJ/classes/Scores.php',
+        'Si_humain' => __DIR__ . '/../..' . '/SCONJ/classes/Si_humain.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

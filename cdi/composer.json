@@ -1,6 +1,6 @@
 {
     "autoload": {
-        "classmap": ["classes","controllers", "models","views"]
+        "classmap": ["SCONJ/classes","SCONJ/controllers", "SCONJ/models","SCONJ/views"]
     },
     "require": {
         "twig/twig": "^3.4",
