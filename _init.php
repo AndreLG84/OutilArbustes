@@ -1,6 +1,10 @@
 <?php
     $dossier_server_path = '/Stage2022MVC';
 
+    $bdd = new PDO('mysql:host=localhost;dbname=stage2022;charset=utf8','root');
+
+    $_SESSION[`classe_memo`][`id`] = 1;
+
     function trouve_outil_id($dossier) {
         $position1=strpos($dossier,"/cdi/"); 
         $position2=strrpos($dossier,'/');

@@ -7,15 +7,23 @@ xhr.open('GET', './models/ModelJeu.php', true)
     //Defines a function to be called when the readyState property changes
 xhr.onreadystatechange = function () {
         // readyState:Holds the status of the XMLHttpRequest    200:"OK"
-    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        Phrase.innerHTML = httpRequest.response;
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+        Phrase.innerHTML = xhr.response;
+        // console.log(JSON.parse(xhr.response));
     }
 }
-xhr.send()
+xhr.send();
 
 
-document.getElementById("clickreponses").addEventListener("click", showReponse);
+document.getElementById("selectreseau").addEventListener("click", showTemps);
+document.getElementById("selectecole").addEventListener("click", showTemps);
 
-function showReponse() {
-  document.getElementById("demo").innerHTML = display();
+function showTemps() {
+  document.getElementById("Choix_temps").style.display = "block";
+  document.getElementById("Choix_phrases").style.height = "80px"; 
+  document.getElementById("Choix_phrases").style.margin = "auto";
+  document.getElementById("Choix_phrases").style.width = "90%";
+  document.getElementById("selectreseau").style.height = "auto";
+  document.getElementById("selectecole").style.height = "auto";
+  document.getElementById("tps0").style.margin = "10px auto";
 }

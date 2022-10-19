@@ -11,8 +11,8 @@
            // on va instancier le modele
            $manager = new ModelJeu();
            // on prépare les variables qu'on envoie au template
-           $conju_classe = '';
-           $param = $manager->getClasse($conju_classe);
+           
+           $param = $manager->getClasse($_SESSION);
            
            echo $twig->render('Homepage.twig', ['selectClasse' => $param]);
 
@@ -27,9 +27,10 @@
            // on va instancier le modele
            $manager = new ModelJeu();
            // on prépare les variables qu'on envoie au template
+           
            $param = $manager->getConju_temps();
            
-           echo $twig->render('Temps.twig', ['conju_temps' => $param]);
+           echo $twig->render('Homepage.twig', ['conju_temps' => $param]);
 
         }
 
@@ -45,4 +46,10 @@
            
            echo $twig->render('Jeu.twig', ['phrases' => $param]);
         }
+
+        // public static function readPosts(int $id){
+        //     $data = ModelJeu::select($id);
+    
+        //     require_once './view/post.php';
+        // }
     }    

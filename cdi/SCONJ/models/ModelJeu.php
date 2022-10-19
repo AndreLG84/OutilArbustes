@@ -11,8 +11,11 @@
                 $start = $db->prepare("SELECT `conju_temps` FROM `cdi_conju` WHERE `conju_classe` = :conju_classe ");
 
                 $start->bindParam(':conju_classe', $conju_classe, PDO::PARAM_INT);
-
+                
                 $start -> execute();
+
+                return ($start->fetchALL(PDO::FETCH_ASSOC));
+
             }
         }
 
@@ -20,16 +23,22 @@
             $db= $this->getDb();
 
             // choix du temps
-            $req1 = $db->query("SELECT `conju_id`, `conju_temps` FROM `cdi_conju`");
+            $conju_classe = $_POST['conju_classe'];
+
+            $req1 = $db->prepare("SELECT `conju_id`, `conju_temps` FROM `cdi_conju` WHERE `conju_classe` = :conju_classe");
+
+            $req1->bindParam('conju_classe', $conju_classe, PDO::PARAM_INT);
+
             $req1 -> execute();
+                
 
-            // $content = '';
-            // while ($d = $req1->fetch(PDO::FETCH_ASSOC)){
-            //     $content .= '<div>'.$d['conju_temps'] . '</div>'; //on stock dans chaque tour 
-            // }
-            // echo $content;
+                // $content = '';
+                // while ($d = $req1->fetch(PDO::FETCH_ASSOC)){
+                //     $content .= '<div>'.$d['conju_temps'] . '</div>'; //on stock dans chaque tour 
+                // }
+                // echo $content;
 
-            // echo json_encode($req1->fetchAll(PDO::FETCH_ASSOC));
+                // echo json_encode($req1->fetchAll(PDO::FETCH_ASSOC));
 
             return ($req1->fetchAll(PDO::FETCH_ASSOC));
         }

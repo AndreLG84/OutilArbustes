@@ -10,8 +10,9 @@ abstract class Model {
     }
 
     private static function setDb(){
+        global $bdd;
         try{
-            self::$_db = new PDO('mysql:host=localhost;dbname=stage2022;charset=utf8','root');
+            self::$_db = &$bdd; 
         } catch (PDOException $e) {
         echo 'Echec de la connexion : ' . $e->getMessage();
         }
