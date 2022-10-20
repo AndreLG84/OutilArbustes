@@ -17,16 +17,10 @@ $router = new AltoRouter();
 
 $router->setBasePath($dossier_server_path.'/cdi/'.$_SESSION['outil_id']);
 
-$router->map('GET|POST', '/', 'ControllerJeu#getClasseCtrl', 'choix réseaux/ecole');
-
-$router->map('GET|POST', '/temps', 'ControllerJeu#getTempsCtrl', 'lancerJeu');
-
-$router->map('GET|POST', '/Jeu', 'ControllerJeu#getphraseTempsCtrl', 'phrases');
+$router->map('GET|POST', '/', 'ControllerJeu#JeuCtrl', 'choix réseaux/ecole');
 
 //admin
 $router->map('GET|POST', '/Admin', 'ControllerAdmin#InsertPhraseCtrl', 'AjouterUnePrase');
-
-$router->map('GET', '/PhrasesEcole', 'ControllerAdmin#getPhraseCtrl', 'PhraseParClasse');
 
 
 $match = $router->match();

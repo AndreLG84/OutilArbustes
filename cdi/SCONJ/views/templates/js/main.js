@@ -27,3 +27,9 @@ function showTemps() {
   document.getElementById("selectecole").style.height = "auto";
   document.getElementById("tps0").style.margin = "10px auto";
 }
+
+document.getElementById("submit-Commencer").addEventListener("click", hide);
+
+function hide(){
+    document.getElementById("form_temps").style.display = "none";
+}

@@ -4,50 +4,57 @@
 <body>
     <section class="Lancer">
         <h1>Bienvenue</h1>
-        
-        <form action="./Jeu" method="POST" class="form_temps" id="form_temps"> 
-
+        <form action="" method="POST" class="form_temps" id="form_temps"> 
             <div class="Choix_phrases" id="Choix_phrases">
 
                 <div id="selectreseau" class="select selectecole" >
-                    <label for="" >Phrase du réseau</label>
-                    <input type="radio" name="" value=""></input>
+                    <label for="conju_classe" >Phrase du réseau</label>
+                    <input type="radio" name="conju_classe" value="1"></input>
                 </div>
 
                 <div id="selectecole" class="select selectecole">
-                    <label for="" >Phrase de l'école</label>
-                    <input type="radio" name="" value=""></input>
+                    <label for="conju_classe" >Phrase de l'école</label>
+                    <input type="radio" name="conju_classe" value="2"></input>
                 </div>
 
             </div>
-            
 
             <div class="Choix_temps" id="Choix_temps">
                 <div class="tps0" id="tps0">
                     <div class="temps">
+                        {% set dataLength = conju_temps|length %}
+                        {% for i in 0..3 %}
                         <div class="conju_tps">
-                            <label for="conju-temps" class="">Imparfait</label>
-                            <input type="radio" name="conju_temps" value="Imparfait" class="input">
+                            <label for="conju-temps" class="">{{ conju_temps[i].conju_temps }}</label>
+                            <input type="radio" name="conju_temps" value="{{ conju_temps[i].conju_temps }}" class="input">
                         </div>
-                        <div class="conju_tps">
-                            <label for="conju-temps" class="">Passé Composé</label>
-                            <input type="radio" name="conju_temps" value="Passé Composé" class="input">
-                        </div>
-                        <div class="conju_tps">
-                            <label for="conju-temps" class="">Présent</label>
-                            <input type="radio" name="conju_temps" value="Présent" class="input">
-                        </div>
-                        <div class="conju_tps">
-                            <label for="conju-temps" class="">Futur</label>
-                            <input type="radio" name="conju_temps" value="Futur" class="input">
-                        </div>
+                        {% endfor %}
                     </div>
-
-                    <input type="submit" name="submit" value="C'est parti" id="" class="submit-Commencer">
                 </div>
+
+                <input type="submit" name="submit" value="C'est parti" id="submit-Commencer" class="submit-Commencer">
             </div>
 
         </form>
+    </section>
+
+    <section class="Jeu" id="Jeu">
+    {{ dump(array) }}
+        <div class="temps_niveau">
+            <p>Temps:&nbsp;{{ array.conju_temps }}</p>
+            <p>Niveau:&nbsp;{{ array.conju_niveau }}</p>
+        </div>
+        <div class="phrase">
+            <p>{{ array.conju_phrase }}</p>
+        </div>
+        <div class="reponses">
+            <p>{{ array.conju_reponses }}</p>
+            <span id= "demo"></span>
+            <button id="clickreponses"></button>
+        </div>
+        <div class="suivant">
+            <button>Suivant</button>
+        </div>
     </section>
 </body>
 {% endblock %}

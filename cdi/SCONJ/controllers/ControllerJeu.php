@@ -2,7 +2,7 @@
 
     class ControllerJeu {
 
-        public static function getClasseCtrl(){
+        public static function JeuCtrl(){
             // le dossier ou on trouve les templates
            $loader = new Twig\Loader\FilesystemLoader('./views');
            // initialiser l'environement Twig
@@ -12,44 +12,14 @@
            $manager = new ModelJeu();
            // on prépare les variables qu'on envoie au template
            
-           $param = $manager->getClasse($_SESSION);
-           
-           echo $twig->render('Homepage.twig', ['selectClasse' => $param]);
-
-        }
-
-        public static function getTempsCtrl(){
-            // le dossier ou on trouve les templates
-           $loader = new Twig\Loader\FilesystemLoader('./views');
-           // initialiser l'environement Twig
-           $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
-           $twig->addExtension(new \Twig\Extension\DebugExtension());
-           // on va instancier le modele
-           $manager = new ModelJeu();
-           // on prépare les variables qu'on envoie au template
-           
-           $param = $manager->getConju_temps();
-           
-           echo $twig->render('Homepage.twig', ['conju_temps' => $param]);
-
-        }
-
-        public static function getphraseTempsCtrl(){
-            $loader = new Twig\Loader\FilesystemLoader('./views');
-           $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
-           $twig->addExtension(new \Twig\Extension\DebugExtension());
-
-           $manager = new ModelJeu();
-           
+           // $param1 = $manager->getClasse($_SESSION);
+           $param2 = $manager->getConju_temps();
+           $conju_classe = $_POST;
            $conju_temps = $_POST;
-           $param = $manager->getphraseTemps($conju_temps);
+           $param3 = $manager->getPhrase($conju_temps, $conju_classe);
+           var_dump($param3);
            
-           echo $twig->render('Jeu.twig', ['phrases' => $param]);
-        }
+           echo $twig->render('Homepage.twig',[/*'selectClasse' => $param1,*/ 'conju_temps' => $param2, 'array' => $param3]);
 
-        // public static function readPosts(int $id){
-        //     $data = ModelJeu::select($id);
-    
-        //     require_once './view/post.php';
-        // }
+        }
     }    
