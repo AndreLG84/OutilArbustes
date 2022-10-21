@@ -39,19 +39,21 @@
     </section>
 
     <section class="Jeu" id="Jeu">
-    {{ dump(array) }}
+        {% set dataLength = phraseTps|length %}
+        {% for i in 0..0 %}
         <div class="temps_niveau">
-            <p>Temps:&nbsp;{{ array.getconju_temps }}</p>
-            <p>Niveau:&nbsp;{{ array.getconju_niveau }}</p>
+            <p>Temps:&nbsp;{{ phraseTps[i].conju_temps }}</p>
+            <p>Niveau:&nbsp;{{ phraseTps[i].conju_niveau }}</p>
         </div>
         <div class="phrase">
-            <p>{{ array.conju_phrase }}</p>
+            <p>{{ phraseTps[i].conju_phrase }}</p>
         </div>
         <div class="reponses">
-            <p>{{ array.conju_reponses }}</p>
+            <p>{{ phraseTps[i].conju_reponses }}</p>
             <span id= "demo"></span>
             <button id="clickreponses"></button>
         </div>
+        {% endfor %}
         <div class="suivant">
             <button>Suivant</button>
         </div>

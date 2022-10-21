@@ -19,7 +19,7 @@
            $conju_temps = $_POST;
            $param3 = $manager->getPhrase($conju_temps, $conju_classe);
            
-           echo $twig->render('Homepage.twig',[/*'selectClasse' => $param1,*/ 'conju_temps' => $param2, 'array' => $param3]);
+           echo $twig->render('Homepage.twig',[/*'selectClasse' => $param1,*/ 'conju_temps' => $param2, 'phraseTps' => $param3[0]]);
 
         }
     }    

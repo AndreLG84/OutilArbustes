@@ -51,15 +51,14 @@
                 $req3->bindParam(':conju_classe', $conju_classe, PDO::PARAM_INT);
                 $req3 -> execute();
                 
-                $array = [];
+                $phraseTps = [];
 
                 while ($d = $req3->fetch(PDO::FETCH_ASSOC)) {
-                    $array[] = new Cdi_conju($d);
-                    var_dump($d);
+                    $phraseTps[] = new Cdi_conju($d);
                 }
-                var_dump($array);
+                var_dump($phraseTps);
 
-                return array($array);
+                return array($phraseTps);
 
                 // return ($req3->fetchALL(PDO::FETCH_ASSOC));
             }
