@@ -2,7 +2,7 @@
 
 {% block content1 %}
 <body>
-    <section class="Lancer">
+    <section class="Lancer" id="Lancer">
         <h1>Bienvenue</h1>
         <form action="" method="POST" class="form_temps" id="form_temps"> 
             <div class="Choix_phrases" id="Choix_phrases">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <input type="submit" name="submit" value="C'est parti" id="submit-Commencer" class="submit-Commencer">
+                <input type="submit" name="submit" value="C'est parti" id="Commencer" class="submit-Commencer">
             </div>
 
         </form>
@@ -46,12 +46,11 @@
             <p>Niveau:&nbsp;{{ phraseTps[i].conju_niveau }}</p>
         </div>
         <div class="phrase">
-            <p>{{ phraseTps[i].conju_phrase }}</p>
+            <p id="phraseTest">{{ phraseTps[i].conju_phrase }}</p>
         </div>
         <div class="reponses">
-            <p>{{ phraseTps[i].conju_reponses }}</p>
-            <span id= "demo"></span>
-            <button id="clickreponses"></button>
+            <span>{{ phraseTps[i].conju_reponses }}</span>
+            <span id= "reponse">{{ phraseTps[i].conju_reponse }}</span>
         </div>
         {% endfor %}
         <div class="suivant">

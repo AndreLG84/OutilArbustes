@@ -1,7 +1,7 @@
 <?php
     $dossier_server_path = '/Stage2022MVC';
 
-    $bdd = new PDO('mysql:host=localhost;dbname=stage2022;charset=utf8','root');
+    $bdd = new PDO('mysql:host=localhost;dbname=stage_sconj;charset=utf8','root');
 
     $_SESSION[`classe_memo`][`id`] = 1;
 

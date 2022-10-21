@@ -28,8 +28,12 @@ function showTemps() {
   document.getElementById("tps0").style.margin = "10px auto";
 }
 
-document.getElementById("submit-Commencer").addEventListener("click", hide);
+document.getElementById("Commencer").addEventListener("click", hide);
 
 function hide(){
-    document.getElementById("form_temps").style.display = "none";
+    document.getElementById("Lancer").style.display = "none";
 }
+
+let rep = document.getElementById("reponse");
+let test = document.getElementById("phraseTest");
+console.log(rep, test);
