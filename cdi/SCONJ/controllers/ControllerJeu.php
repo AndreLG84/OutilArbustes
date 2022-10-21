@@ -11,13 +11,13 @@
            // on va instancier le modele
            $manager = new ModelJeu();
            // on prépare les variables qu'on envoie au template
-           
            // $param1 = $manager->getClasse($_SESSION);
+
            $param2 = $manager->getConju_temps();
+
            $conju_classe = $_POST;
            $conju_temps = $_POST;
            $param3 = $manager->getPhrase($conju_temps, $conju_classe);
-           var_dump($param3);
            
            echo $twig->render('Homepage.twig',[/*'selectClasse' => $param1,*/ 'conju_temps' => $param2, 'array' => $param3]);
 

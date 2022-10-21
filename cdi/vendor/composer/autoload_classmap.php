@@ -9,6 +9,7 @@ return array(
     'AltoRouter' => $vendorDir . '/altorouter/altorouter/AltoRouter.php',
     'Arbustes_outil' => $baseDir . '/SCONJ/classes/Arbustes_outil.php',
     'Cdi_conju' => $baseDir . '/SCONJ/classes/Cdi_conju.php',
+    'Classes' => $baseDir . '/SCONJ/classes/Classes.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'ControllerAdmin' => $baseDir . '/SCONJ/controllers/ControllerAdmin.php',
     'ControllerJeu' => $baseDir . '/SCONJ/controllers/ControllerJeu.php',

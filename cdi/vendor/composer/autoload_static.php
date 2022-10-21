@@ -42,6 +42,7 @@ class ComposerStaticInit3d45322143cd68638174e116df3fcf91
         'AltoRouter' => __DIR__ . '/..' . '/altorouter/altorouter/AltoRouter.php',
         'Arbustes_outil' => __DIR__ . '/../..' . '/SCONJ/classes/Arbustes_outil.php',
         'Cdi_conju' => __DIR__ . '/../..' . '/SCONJ/classes/Cdi_conju.php',
+        'Classes' => __DIR__ . '/../..' . '/SCONJ/classes/Classes.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ControllerAdmin' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerAdmin.php',
         'ControllerJeu' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerJeu.php',
