@@ -1,5 +1,5 @@
 <?php
-abstract class Model {
+abstract class Sconj_Model {
     private static $_db;
 
     protected function getDb(){

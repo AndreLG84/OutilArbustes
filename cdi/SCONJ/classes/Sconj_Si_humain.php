@@ -1,5 +1,5 @@
 <?php
-    class Si_humain {
+    class Sconj_Si_humain {
         private $_humain_id;
         private $_humain_login;
 

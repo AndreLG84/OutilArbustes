@@ -1,5 +1,5 @@
 <?php
-    class Arbustes_outil {
+    class Sconj_Arbustes_outil {
 
         private $_outil_id;
         private $_outil_est_actif;

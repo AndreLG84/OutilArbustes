@@ -1,6 +1,6 @@
 <?php
 
-    class ModelAdmin extends Model {
+    class Sconj_ModelAdmin extends Sconj_Model {
 
         public function InsertPhrase() {
             $db= $this->getDb();
@@ -44,7 +44,7 @@
             $arrayphrase = [];
 
             while($data = $req->fetch(PDO::FETCH_ASSOC)){
-                $arrayphrase[] = new Cdi_conju($data);
+                $arrayphrase[] = new Sconj_Cdi_conju($data);
             }
             return array($arrayphrase);
             

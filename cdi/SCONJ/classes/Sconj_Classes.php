@@ -1,5 +1,5 @@
 <?php
-    class Classes {
+    class Sconj_Classes {
         public function __construct (array $datas){
             $this->hydrate($datas);
         }

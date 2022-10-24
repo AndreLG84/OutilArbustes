@@ -40,6 +40,9 @@ let test = document.getElementById("phraseTest");
 test.style.color = "red";
 console.log(rep, test);
 
+function hideVerbe(){
+    
+}
 
 
 

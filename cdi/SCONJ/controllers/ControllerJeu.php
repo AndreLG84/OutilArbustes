@@ -9,7 +9,7 @@
            $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
            $twig->addExtension(new \Twig\Extension\DebugExtension());
            // on va instancier le modele
-           $manager = new ModelJeu();
+           $manager = new Sconj_ModelJeu();
            // on prépare les variables qu'on envoie au template
            // $param1 = $manager->getClasse($_SESSION);
 

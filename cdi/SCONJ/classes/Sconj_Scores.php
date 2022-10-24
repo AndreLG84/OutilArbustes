@@ -1,5 +1,5 @@
 <?php
-    class Scores {
+    class Sconj_Scores {
 
         private $_score_id;
         private $_score_valeur;

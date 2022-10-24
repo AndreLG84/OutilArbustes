@@ -1,5 +1,5 @@
 <?php
-    class Cdi_conju extends Classes {
+    class Cdi_conju extends Sconj_Classes {
 
         private $_conju_id;
         private $_conju_phrase;

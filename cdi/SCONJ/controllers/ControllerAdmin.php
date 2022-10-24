@@ -9,7 +9,7 @@
            $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
            $twig->addExtension(new Twig\Extension\DebugExtension());
             // on va instancier le modele
-           $manager = new ModelAdmin();
+           $manager = new Sconj_ModelAdmin();
            // on prépare les variables qu'on envoie au template
            $inserer = $manager->InsertPhrase();
            echo $twig->render('Admin.twig', ['insererPhrase' => $inserer]);
@@ -21,7 +21,7 @@
             $twig = new \Twig\Environment($loader, ['cache' => false, 'debug' => true]);
             $twig->addExtension(new \Twig\Extension\DebugExtension());
  
-            $manager = new ModelAdmin();
+            $manager = new Sconj_ModelAdmin();
  
             $dataphrase = $manager->getPhrases();
             

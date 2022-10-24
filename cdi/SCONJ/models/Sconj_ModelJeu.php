@@ -1,5 +1,5 @@
 <?php
-    class ModelJeu extends Model {
+    class Sconj_ModelJeu extends Sconj_Model {
         // choix phrase reseau ou classe
         // public function getClasse($conju_classe){
         //     $db= $this->getDb();
@@ -54,7 +54,7 @@
                 $phraseTps = [];
 
                 while ($d = $req3->fetch(PDO::FETCH_ASSOC)) {
-                    $phraseTps[] = new Cdi_conju($d);
+                    $phraseTps[] = new Sconj_Cdi_conju($d);
                 }
                 var_dump($phraseTps);
 
