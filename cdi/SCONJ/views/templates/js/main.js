@@ -1,4 +1,4 @@
-const Phrase = document.getElementById('phrase');
+const demo = document.getElementById('phrasedemo');
     // On crée le canal de communication avec le serveur
 	// On veut aller sur la database
 const xhr = new XMLHttpRequest();
@@ -8,7 +8,7 @@ xhr.open('GET', './models/ModelJeu.php', true)
 xhr.onreadystatechange = function () {
         // readyState:Holds the status of the XMLHttpRequest    200:"OK"
     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        Phrase.innerHTML = xhr.response;
+        demo.innerHTML = xhr.response;
         // console.log(JSON.parse(xhr.response));
     }
 }
@@ -35,5 +35,17 @@ function hide(){
 }
 
 let rep = document.getElementById("reponse");
+let vide = "";
 let test = document.getElementById("phraseTest");
+test.style.color = "red";
 console.log(rep, test);
+
+function hideVerbe(){
+
+}
+
+
+
+
+
+
