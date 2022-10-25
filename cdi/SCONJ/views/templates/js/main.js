@@ -40,10 +40,17 @@ let test = document.getElementById("phraseTest");
 test.style.color = "red";
 console.log(rep, test);
 
-function hideVerbe(){
-    
+function replaceString(oldS, newS, fullS) {
+    // On remplace oldS avec newS dans fullS
+    for (var i = 0; i < fullS.length; i++) {
+        if (fullS.substring(i, i + oldS.length) == oldS) {
+         fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+        }
+    }
+    return fullS;
 }
-
+replaceString("World", "Web", "Brave New World");
+console.log(replaceString);
 
 
 
