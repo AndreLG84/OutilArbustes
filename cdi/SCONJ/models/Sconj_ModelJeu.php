@@ -54,7 +54,7 @@
                 $phraseTps = [];
 
                 while ($d = $req3->fetch(PDO::FETCH_ASSOC)) {
-                    $phraseTps[] = new Sconj_Cdi_conju($d);
+                    $phraseTps[] = new Cdi_conju($d);
                 }
                 var_dump($phraseTps);
 

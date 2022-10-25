@@ -7,16 +7,16 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AltoRouter' => $vendorDir . '/altorouter/altorouter/AltoRouter.php',
-    'Arbustes_outil' => $baseDir . '/SCONJ/classes/Arbustes_outil.php',
     'Cdi_conju' => $baseDir . '/SCONJ/classes/Cdi_conju.php',
-    'Classes' => $baseDir . '/SCONJ/classes/Classes.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'ControllerAdmin' => $baseDir . '/SCONJ/controllers/ControllerAdmin.php',
     'ControllerJeu' => $baseDir . '/SCONJ/controllers/ControllerJeu.php',
     'ControllerScores' => $baseDir . '/SCONJ/controllers/ControllerScores.php',
-    'Model' => $baseDir . '/SCONJ/models/Model.php',
-    'ModelAdmin' => $baseDir . '/SCONJ/models/ModelAdmin.php',
-    'ModelJeu' => $baseDir . '/SCONJ/models/ModelJeu.php',
-    'Scores' => $baseDir . '/SCONJ/classes/Scores.php',
-    'Si_humain' => $baseDir . '/SCONJ/classes/Si_humain.php',
+    'Sconj_Arbustes_outil' => $baseDir . '/SCONJ/classes/Sconj_Arbustes_outil.php',
+    'Sconj_Classes' => $baseDir . '/SCONJ/classes/Sconj_Classes.php',
+    'Sconj_Model' => $baseDir . '/SCONJ/models/Sconj_Model.php',
+    'Sconj_ModelAdmin' => $baseDir . '/SCONJ/models/Sconj_ModelAdmin.php',
+    'Sconj_ModelJeu' => $baseDir . '/SCONJ/models/Sconj_ModelJeu.php',
+    'Sconj_Scores' => $baseDir . '/SCONJ/classes/Sconj_Scores.php',
+    'Sconj_Si_humain' => $baseDir . '/SCONJ/classes/Sconj_Si_humain.php',
 );
