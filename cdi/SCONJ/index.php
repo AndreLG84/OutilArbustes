@@ -17,7 +17,7 @@ $router = new AltoRouter();
 
 $router->setBasePath($dossier_server_path.'/cdi/'.$_SESSION['outil_id']);
 
-$router->map('GET|POST', '/', 'ControllerJeu#JeuCtrl', 'choix réseaux/ecole');
+$router->map('GET|POST', '/', 'ControllerJeu#AfficherPhrase', 'choix réseaux/ecole');
 
 //admin
 $router->map('GET|POST', '/Admin', 'ControllerAdmin#InsertPhraseCtrl', 'AjouterUnePrase');
@@ -33,25 +33,3 @@ if($match){
     }
 
 }
-
-
-// if(empty($controller)){
-//     $page =(isset($_GET['p'])) ? $_GET['p'] : 0; //operateur ternaire  ?alors :sinon
-//     ControllerPost::listPosts($page);     
-// } else if($controller == 'post'){
-//      $action =(isset($_GET['action'])) ? $_GET['action'] : 'list';
-    
-//     switch($action){ //test laction
-//         case 'list':
-//             $page = (isset($_GET['p'])) ? $_GET['p'] : 0;
-//             ControllerPost::listPosts($page);
-//             break;
-//         case 'read':
-//             $id = $_GET['id'];
-//             ControllerPost::readPosts($id);
-//             break;
-//         default:
-//             ControllerPost::listPosts(0);
-//             break;
-//     }
-// }

@@ -34,25 +34,8 @@ function hide(){
     document.getElementById("Lancer").style.display = "none";
 }
 
-let rep = document.getElementById("reponse");
+let verbe = document.getElementById("reponse");
 let vide = "";
-let test = document.getElementById("phraseTest");
-test.style.color = "red";
-console.log(rep, test);
-
-function replaceString(oldS, newS, fullS) {
-    // On remplace oldS avec newS dans fullS
-    for (var i = 0; i < fullS.length; i++) {
-        if (fullS.substring(i, i + oldS.length) == oldS) {
-         fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
-        }
-    }
-    return fullS;
-}
-replaceString("World", "Web", "Brave New World");
-console.log(replaceString);
-
-
-
-
+let phrase = document.getElementById("phraseTest");
+console.log(phrase, vide, verbe);
 

@@ -1,10 +1,16 @@
-{% extends 'BaseTemplate.twig' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-{% block content1 %}
 <body>
     <section class="Lancer" id="Lancer">
         <h1>Bienvenue</h1>
-        <form action="" method="POST" class="form_temps" id="form_temps"> 
+           <form action="" method="POST" class="form_temps" id="form_temps"> 
             <div class="Choix_phrases" id="Choix_phrases">
 
                 <div id="selectreseau" class="select selectecole" >
@@ -22,13 +28,11 @@
             <div class="Choix_temps" id="Choix_temps">
                 <div class="tps0" id="tps0">
                     <div class="temps">
-                        {% set dataLength = conju_temps|length %}
-                        {% for i in 0..3 %}
+                        
                         <div class="conju_tps">
-                            <label for="conju-temps" class="">{{ conju_temps[i].conju_temps }}</label>
-                            <input type="radio" name="conju_temps" value="{{ conju_temps[i].conju_temps }}" class="input">
+                            <label for="conju-temps" class=""></label>
+                            <input type="radio" name="conju_temps" value="" class="input">
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
 
@@ -36,17 +40,18 @@
             </div>
 
         </form>
+
     </section>
 
     <section class="Jeu" id="Jeu">
-
+        <?= $phraseTp ?>
         <div class="temps_niveau">
             <p>Temps:&nbsp;</p>
             <p>Niveau:&nbsp;</p>
         </div>
         <div class="phrase">
         
-            <p id="phraseTest">{{ phraseTps }}</p>
+            <p id="phraseTest"></p>
             
         </div>
         <div class="reponses">
@@ -58,4 +63,4 @@
         </div>
     </section>
 </body>
-{% endblock %}
+</html>

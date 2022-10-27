@@ -35,32 +35,20 @@
             return ($req1->fetchAll(PDO::FETCH_ASSOC));
             
         }
-
-        public function getPhrase(){
+        // recuper toute les phrases avec en entrée un tableau $params avec le temps et la classe
+        public function getPhrases($params){
             $db = $this->getDb();
-            //phrase par temps
-            if (isset($_POST['submit'])) {
 
-                $conju_classe = $_POST['conju_classe'];
-                // $conju_temps = $_POST['conju_temps'];
-                $conju_temps = isset($_POST['conju_temps']) ? $_POST['conju_temps'] : null;
+            $req3 = $db->prepare("SELECT `conju_phrase`,`conju_reponses`, `conju_reponse`, `conju_niveau`, `conju_temps`, `conju_classe` FROM `cdi_conju` WHERE `conju_temps` = :conju_temps AND `conju_classe` = :conju_classe");
 
-                $req3 = $db->prepare("SELECT `conju_phrase`,`conju_reponses`, `conju_reponse`, `conju_niveau`, `conju_temps`, `conju_classe` FROM `cdi_conju` WHERE `conju_temps` = :conju_temps AND `conju_classe` = :conju_classe ");
+            $req3->bindParam(':conju_temps', $params['conju_temps'], PDO::PARAM_STR);
+            $req3->bindParam(':conju_classe', $params['conju_classe'], PDO::PARAM_INT);
+            $req3 -> execute();
 
-                $req3->bindParam(':conju_temps', $conju_temps, PDO::PARAM_STR);
-                $req3->bindParam(':conju_classe', $conju_classe, PDO::PARAM_INT);
-                $req3 -> execute();
-                
-                $phraseTps = [];
+            $phraseTps = [];
+            while ($d = $req3->fetch(PDO::FETCH_ASSOC)) $phraseTps[] = new Cdi_conju($d);
 
-                while ($d = $req3->fetch(PDO::FETCH_ASSOC)) {
-                    $phraseTps[] = new Cdi_conju($d);
-                }
-                var_dump($phraseTps);
-
-                return array($phraseTps);
-
-                // return ($req3->fetchALL(PDO::FETCH_ASSOC));
-            }
+            return $phraseTps;
+            // return ($req3->fetchALL(PDO::FETCH_ASSOC));
         }
     }
