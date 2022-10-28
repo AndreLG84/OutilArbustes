@@ -28,8 +28,6 @@
 
            // on va instancier le modele
            $manager = new Sconj_ModelJeu();
-
-            var_dump($_POST);
             $conju_temps = $_POST;
             // on prépare les variables qu'on envoie au template
             $param2 = $manager->getConju_temps();
@@ -43,9 +41,12 @@
 
             $phrasecachee = strstr($phrasecomplete, $verbe, true);
             $phraseafter = substr(strstr($phrasecomplete,$verbe),strlen($verbe));
-            var_dump($phrasecachee);
-            var_dump($phraseafter);
+            
+            $reponses = $objetphrases[$indicealeatoire]->getConju_reponses();
+            $reponsexplode = explode(",", $reponses);
+            var_dump($reponses);
+            var_dump($reponsexplode);
 
-            echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phrasecachee, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases ]);
+            echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phrasecachee, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases, 'reponses' => $reponsexplode]);
         }
     }

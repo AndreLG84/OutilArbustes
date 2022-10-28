@@ -28,14 +28,7 @@ function showTemps() {
   document.getElementById("tps0").style.margin = "10px auto";
 }
 
-document.getElementById("Commencer").addEventListener("click", hide);
 
-function hide(){
-    document.getElementById("Lancer").style.display = "none";
-}
+const BtnRep = document.getElementById('RepBtn').addEventListener('click', true);
 
-let verbe = document.getElementById("reponse");
-let vide = "";
-let phrase = document.getElementById("phraseTest");
-console.log(phrase, vide, verbe);
-
+function matchReponse()

@@ -10,15 +10,17 @@
         </div>
         <div class="phrase">
         
-            <p id="phraseTest">{{ phraseTps }}</p><span>...</span><p>{{ phraseTpsAfter }}</p>
+            <p id="phraseTest">{{ phraseTps }}</p><span id="hideVerbe"></span><p>{{ phraseTpsAfter }}</p>
             
         </div>
         <div class="reponses">
-            <p>{{ data.conju_reponses }}</p>
+        {% for dataRep in reponses %}
+            <button id="RepBtn">{{ dataRep }}</button>
+        {% endfor %}
         </div>
         <span id= "reponse"></span>
         <div class="suivant">
-            <button>Suivant</button>
+            <button id="Next">Suivant</button>
         </div>
         {% endfor %}
     </section>

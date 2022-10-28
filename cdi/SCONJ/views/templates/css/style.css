@@ -191,21 +191,41 @@ footer> img {
 .phrase {
     font-size: 2.5rem;
 }
+#hideVerbe {
+    display: block;
+    width: 70px;
+    height: 40px;
+    margin: 0 15px;
+    border-radius: 10px;
+    background-color: #C05050;
+
+}
 .reponses {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     background-color: white;
     text-align: center;
     width: 80%;
-    min-height: 50px;
     height: auto;
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0px 50px 0px;
 }
-.reponses {
-    font-size: 2rem;
+#RepBtn {
+    font-size: 1.8rem;
+    margin: 20px 10px;
+    padding: 1.5%;
+    border-radius: 10px;
+    background-color: #C05050;
+    color: white;
+    box-shadow: none;
+    border: none;
 }
+#RepBtn:hover {
+    color: red;
+    background-color: #F3DF28;
+    cursor: pointer;
+}
+
 .suivant {
     display: flex;
     justify-content: center;
@@ -213,7 +233,7 @@ footer> img {
     width: 100%;
     background-color: #37465cb7;
 }
-.suivant > button {
+.suivant > #Next {
     margin: 20px 0px;
     font-size: 2rem;
     padding:1% 1.5%;
@@ -221,6 +241,7 @@ footer> img {
     border: 2px solid white;
     background-color: #F3DF28;
     color:#25AC33;
+    cursor:pointer;
 }
 
 /*Admin*/
