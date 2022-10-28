@@ -1,0 +1,26 @@
+{% extends 'BaseTemplate.twig' %}
+
+{% block content1 %}
+<body>
+    <section class="Jeu" id="Jeu">
+        {% for data in objetphrase %}
+        <div class="temps_niveau">
+            <p>Temps:&nbsp;{{ data.conju_temps }}</p>
+            <p>Niveau:&nbsp;{{ data.conju_niveau }}</p>
+        </div>
+        <div class="phrase">
+        
+            <p id="phraseTest">{{ phraseTps }}</p><span>...</span><p>{{ phraseTpsAfter }}</p>
+            
+        </div>
+        <div class="reponses">
+            <p>{{ data.conju_reponses }}</p>
+        </div>
+        <span id= "reponse"></span>
+        <div class="suivant">
+            <button>Suivant</button>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+{% endblock %}

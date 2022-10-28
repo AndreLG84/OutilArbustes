@@ -1,46 +1,51 @@
 <?php
-
+    // Objectif : Afficher phrase cachée à partir de la saisie de l'utilisateur 
+    // Entrée : saisie de l'utilisateur $_POST
+    // Sortie : affichage de la phrase
     class ControllerJeu {
-
     
-        // Objectif : Afficher phrase cachée à partir de la saisie de l'utilisateur 
-        // Entrée : saisie de l'utilisateur $_POST
-        // Sortie : affichage de la phrase
-        public static function AfficherPhrase(){
-            
+        public static function Accueil(){
             // le dossier ou on trouve les templates
            $loader = new Twig\Loader\FilesystemLoader('./views');
            // initialiser l'environement Twig
            $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
            $twig->addExtension(new \Twig\Extension\DebugExtension());
+           // on va instancier le modele
+           $manager = new Sconj_ModelJeu();
 
-           if (isset($_POST['submit'])) {
-                echo 'toto';
-                var_dump($_POST);
-                $conju_temps = $_POST;
-                // on va instancier le modele
-                $manager = new Sconj_ModelJeu();
-                // on prépare les variables qu'on envoie au template
-                // $param1 = $manager->getClasse($_SESSION);
-                $param2 = $manager->getConju_temps();
-
-                $objetphrases = $manager->getPhrases($conju_temps);
-                var_dump($objetphrases);
-                $indicealeatoire=0;
-
-                $verbe = $objetphrases[$indicealeatoire]->getConju_reponse();
-                $phrasecomplete = $objetphrases[$indicealeatoire]->getConju_phrase();
-
-                $phrasecachee = strstr($phrasecomplete, $verbe, true);
-                echo $twig->render('Homepage.twig',[/*'selectClasse' => $param1,*/ 'conju_temps' => $param2, 'phraseTps' => $phrasecachee]);
-            }
-
+           $param1 = $manager->getClasse($_SESSION);
+           $param2 = $manager->getConju_temps();
+            
+           echo $twig->render('Homepage.twig',['selectClasse' => $param1,'conju_temps' => $param2 ]);
         }
 
-        // public static function Jeu (){
-        //     $data = new Sconj_ModelJeu();
+        public static function AfficherPhrase(){
+        // le dossier ou on trouve les templates
+           $loader = new Twig\Loader\FilesystemLoader('./views');
+           // initialiser l'environement Twig
+           $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
+           $twig->addExtension(new \Twig\Extension\DebugExtension());
 
-        //     $phrase = $data->getPhrase();
-        //     require_once './views'
-        // }
-    }    
+           // on va instancier le modele
+           $manager = new Sconj_ModelJeu();
+
+            var_dump($_POST);
+            $conju_temps = $_POST;
+            // on prépare les variables qu'on envoie au template
+            $param2 = $manager->getConju_temps();
+
+            $objetphrases = $manager->getPhrases($conju_temps);
+            var_dump($objetphrases);
+            $indicealeatoire=0;
+
+            $verbe = $objetphrases[$indicealeatoire]->getConju_reponse();
+            $phrasecomplete = $objetphrases[$indicealeatoire]->getConju_phrase();
+
+            $phrasecachee = strstr($phrasecomplete, $verbe, true);
+            $phraseafter = substr(strstr($phrasecomplete,$verbe),strlen($verbe));
+            var_dump($phrasecachee);
+            var_dump($phraseafter);
+
+            echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phrasecachee, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases ]);
+        }
+    }

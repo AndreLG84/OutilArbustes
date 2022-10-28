@@ -17,11 +17,12 @@ $router = new AltoRouter();
 
 $router->setBasePath($dossier_server_path.'/cdi/'.$_SESSION['outil_id']);
 
-$router->map('GET|POST', '/', 'ControllerJeu#AfficherPhrase', 'choix réseaux/ecole');
+$router->map('GET|POST', '/', 'ControllerJeu#Accueil', 'choix réseaux/ecole');
+
+$router->map('GET|POST', '/Phrase', 'ControllerJeu#AfficherPhrase', 'Afficher phrase');
 
 //admin
 $router->map('GET|POST', '/Admin', 'ControllerAdmin#InsertPhraseCtrl', 'AjouterUnePrase');
-
 
 $match = $router->match();
 if($match){
@@ -31,5 +32,4 @@ if($match){
     if(is_callable(array($obj, $action))){
         call_user_func_array(array($obj, $action), $match['params']);
     }
-
 }

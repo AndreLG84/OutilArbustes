@@ -11,7 +11,7 @@ return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'ControllerAdmin' => $baseDir . '/SCONJ/controllers/ControllerAdmin.php',
     'ControllerJeu' => $baseDir . '/SCONJ/controllers/ControllerJeu.php',
-    'ControllerScores' => $baseDir . '/SCONJ/controllers/ControllerScores.php',
+    'ControllerScoresSconj' => $baseDir . '/SCONJ/controllers/ControllerScoresSconj.php',
     'Sconj_Arbustes_outil' => $baseDir . '/SCONJ/classes/Sconj_Arbustes_outil.php',
     'Sconj_Classes' => $baseDir . '/SCONJ/classes/Sconj_Classes.php',
     'Sconj_Model' => $baseDir . '/SCONJ/models/Sconj_Model.php',

@@ -1,19 +1,19 @@
 <?php
     class Sconj_ModelJeu extends Sconj_Model {
         // choix phrase reseau ou classe
-        // public function getClasse($conju_classe){
-        //     $db= $this->getDb();
+        public function getClasse($conju_classe){
+            $db= $this->getDb();
             
-        //     $conju_classe = isset($_POST['conju_classe']) ? $_POST['conju_classe'] : null;
+            $conju_classe = isset($_POST['conju_classe']) ? $_POST['conju_classe'] : null;
 
-        //     $start = $db->prepare("SELECT `conju_temps` FROM `cdi_conju` WHERE `conju_classe` = :conju_classe ");
+            $start = $db->prepare("SELECT `conju_temps` FROM `cdi_conju` WHERE `conju_classe` = :conju_classe ");
 
-        //     $start->bindParam(':conju_classe', $conju_classe, PDO::PARAM_INT);
-        //     $start -> execute();
+            $start->bindParam(':conju_classe', $conju_classe, PDO::PARAM_INT);
+            $start -> execute();
 
-        //     return ($start->fetchALL(PDO::FETCH_ASSOC));
+            return ($start->fetchALL(PDO::FETCH_ASSOC));
 
-        // }
+        }
 
         public function getConju_temps(){
             $db= $this->getDb();

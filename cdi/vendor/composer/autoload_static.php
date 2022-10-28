@@ -44,7 +44,7 @@ class ComposerStaticInit3d45322143cd68638174e116df3fcf91
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'ControllerAdmin' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerAdmin.php',
         'ControllerJeu' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerJeu.php',
-        'ControllerScores' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerScores.php',
+        'ControllerScoresSconj' => __DIR__ . '/../..' . '/SCONJ/controllers/ControllerScoresSconj.php',
         'Sconj_Arbustes_outil' => __DIR__ . '/../..' . '/SCONJ/classes/Sconj_Arbustes_outil.php',
         'Sconj_Classes' => __DIR__ . '/../..' . '/SCONJ/classes/Sconj_Classes.php',
         'Sconj_Model' => __DIR__ . '/../..' . '/SCONJ/models/Sconj_Model.php',
