@@ -33,5 +33,5 @@ const reponse = document.getElementById("reponse");
 console.log(BtnRep, reponse);
 
 function verifReponse(){
-    if (BtnRep == reponse) alert();
+    if (BtnRep == reponse) alert('coucou');
 }
