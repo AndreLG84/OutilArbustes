@@ -28,7 +28,10 @@ function showTemps() {
   document.getElementById("tps0").style.margin = "10px auto";
 }
 
+const BtnRep = document.getElementById("RepBtn").addEventListener("click", verifReponse );
+const reponse = document.getElementById("reponse");
+console.log(BtnRep, reponse);
 
-const BtnRep = document.getElementById('RepBtn').addEventListener('click', true);
-
-function matchReponse()
+function verifReponse(){
+    if (BtnRep == reponse) alert();
+}

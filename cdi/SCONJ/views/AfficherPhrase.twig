@@ -14,12 +14,17 @@
             
         </div>
         <div class="reponses">
+        <span id="reponse">{{ reponse }}</span>
         {% for dataRep in reponses %}
+
             <button id="RepBtn">{{ dataRep }}</button>
+
         {% endfor %}
         </div>
-        <span id= "reponse"></span>
+    
         <div class="suivant">
+            <span id="nombreClick">nombre de click:</span>
+            <span id="numerophrase">1/5 </span>
             <button id="Next">Suivant</button>
         </div>
         {% endfor %}

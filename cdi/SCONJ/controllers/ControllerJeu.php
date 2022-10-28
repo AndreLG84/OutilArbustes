@@ -34,6 +34,7 @@
 
             $objetphrases = $manager->getPhrases($conju_temps);
             var_dump($objetphrases);
+
             $indicealeatoire=0;
 
             $verbe = $objetphrases[$indicealeatoire]->getConju_reponse();
@@ -44,9 +45,12 @@
             
             $reponses = $objetphrases[$indicealeatoire]->getConju_reponses();
             $reponsexplode = explode(",", $reponses);
-            var_dump($reponses);
             var_dump($reponsexplode);
 
-            echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phrasecachee, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases, 'reponses' => $reponsexplode]);
+            $reponse = $objetphrases[$indicealeatoire]->getConju_reponse();
+            var_dump($reponse);
+            
+
+            echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phrasecachee, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases, 'reponses' => $reponsexplode, 'reponse' => $reponse]);
         }
     }
