@@ -1,5 +1,5 @@
 <?php
 
-    class ControllerScoresSconj {
+    class ControllerScoresSconj extends ControllerSconj {
         
     }

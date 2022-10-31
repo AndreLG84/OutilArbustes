@@ -2,15 +2,11 @@
     // Objectif : Afficher phrase cachée à partir de la saisie de l'utilisateur 
     // Entrée : saisie de l'utilisateur $_POST
     // Sortie : affichage de la phrase
-    class ControllerJeu {
+    class ControllerJeu extends ControllerTwigSconj {
     
         public static function Accueil(){
-            // le dossier ou on trouve les templates
-           $loader = new Twig\Loader\FilesystemLoader('./views');
-           // initialiser l'environement Twig
-           $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
-           $twig->addExtension(new \Twig\Extension\DebugExtension());
            // on va instancier le modele
+           $twig = ControllerTwigSconj::twigControl();
            $manager = new Sconj_ModelJeu();
 
            $param1 = $manager->getClasse($_SESSION);
@@ -20,13 +16,8 @@
         }
 
         public static function AfficherPhrase(){
-        // le dossier ou on trouve les templates
-           $loader = new Twig\Loader\FilesystemLoader('./views');
-           // initialiser l'environement Twig
-           $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
-           $twig->addExtension(new \Twig\Extension\DebugExtension());
-
            // on va instancier le modele
+           $twig = ControllerTwigSconj::twigControl();
            $manager = new Sconj_ModelJeu();
             $conju_temps = $_POST;
             // on prépare les variables qu'on envoie au template

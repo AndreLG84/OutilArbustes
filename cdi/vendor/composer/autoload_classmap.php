@@ -12,6 +12,7 @@ return array(
     'ControllerAdmin' => $baseDir . '/SCONJ/controllers/ControllerAdmin.php',
     'ControllerJeu' => $baseDir . '/SCONJ/controllers/ControllerJeu.php',
     'ControllerScoresSconj' => $baseDir . '/SCONJ/controllers/ControllerScoresSconj.php',
+    'ControllerTwigSconj' => $baseDir . '/SCONJ/controllers/ControllerTwigSconj.php',
     'Sconj_Arbustes_outil' => $baseDir . '/SCONJ/classes/Sconj_Arbustes_outil.php',
     'Sconj_Classes' => $baseDir . '/SCONJ/classes/Sconj_Classes.php',
     'Sconj_Model' => $baseDir . '/SCONJ/models/Sconj_Model.php',
