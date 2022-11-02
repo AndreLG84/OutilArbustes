@@ -8,13 +8,16 @@
             <p>Temps:&nbsp;{{ data.conju_temps }}</p>
             <p>Niveau:&nbsp;{{ data.conju_niveau }}</p>
         </div>
-        <div class="phrase">
-        
-            <p id="phraseTest">{{ phraseTps }}</p><span id="hideVerbe"></span><p>{{ phraseTpsAfter }}</p>
-            
+        <div class="phrase" id ="phrase">
+            <div id="avant">
+                <p id="phraseTest">{{ phraseTps }}</p><span id="hideVerbe"></span><p id ="phraseTest">{{ phraseTpsAfter }}</p>
+            </div>
+            <div id="apres">
+                <p> {{ phrasecomplete }} </p>
+            </div>
         </div>
         <div class="reponses">
-        <span id="reponse">{{ reponse }}</span>
+        <span id="reponse" hidden>{{ reponse }}</span>
         {% for dataRep in reponses %}
             <button  class="RepBtn" id="RepBtn">{{ dataRep }}</button>
         {% endfor %}
