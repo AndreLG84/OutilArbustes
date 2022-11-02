@@ -42,6 +42,8 @@
             $reponse = $objetphrases[$indicealeatoire]->getConju_reponse();
             var_dump($reponse);
 
+            
+
 
             echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phraseavant, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases, 'reponses' => $reponsexplode, 'reponse' => $reponse, 'phrasecomplete' => $phrasecomplete]);
         }

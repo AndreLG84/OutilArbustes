@@ -15,6 +15,7 @@ function verifReponse(btnvalue){
     const oldphrase = document.getElementById("avant")
     const phraseCorrect = document.getElementById("apres")
     const blockVerbe = document.getElementById("hideVerbe")
+    const Nextbtn = document.getElementById("Next")
 
     if (btnvalue === reponse.innerText) {
         // alert('Bonne réponse')
@@ -25,6 +26,7 @@ function verifReponse(btnvalue){
         phraseCorrect.style.alignItems = "center"
         phraseCorrect.style.justifyContent = "center"
         phraseCorrect.style.height = "100%"
+        Nextbtn.style.display = "block"
     }
     else {
         // alert('Mauvaise réponse')
