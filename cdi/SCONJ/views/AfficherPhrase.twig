@@ -16,9 +16,7 @@
         <div class="reponses">
         <span id="reponse">{{ reponse }}</span>
         {% for dataRep in reponses %}
-
-            <button id="RepBtn">{{ dataRep }}</button>
-
+            <button  class="RepBtn" id="RepBtn">{{ dataRep }}</button>
         {% endfor %}
         </div>
     
@@ -29,5 +27,7 @@
         </div>
         {% endfor %}
     </section>
+
+    <script src="./views/templates/js/MainPhrase.js"></script>
 </body>
 {% endblock %}
