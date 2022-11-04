@@ -3,10 +3,11 @@
 {% block content1 %}
 <body>
     <section class="Jeu" id="Jeu">
-        {% for data in objetphrase %}
+        {% set phraseLength = objetphrase|length %}
+        {% for i in 0..0 %}
         <div class="temps_niveau">
-            <p>Temps:&nbsp;{{ data.conju_temps }}</p>
-            <p>Niveau:&nbsp;{{ data.conju_niveau }}</p>
+            <p>Temps:&nbsp;{{ objetphrase[i].conju_temps }}</p>
+            <p>Niveau:&nbsp;{{ objetphrase[i].conju_niveau }}</p>
         </div>
         <div class="phrase" id ="phrase">
             <div id="avant">
@@ -22,11 +23,14 @@
             <button  class="RepBtn" id="RepBtn">{{ dataRep }}</button>
         {% endfor %}
         </div>
-    
+
         <div class="suivant">
-            <span id="nombreClick">nombre de click:</span>
-            <span id="numerophrase">1/5 </span>
             <button id="Next">Suivant</button>
+        </div>
+    
+        <div class="click">
+            <span id="nombreClick">Nombre de click:</span>
+            <span id="numerophrase">1/5 </span>
         </div>
         {% endfor %}
     </section>

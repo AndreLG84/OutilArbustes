@@ -1,15 +1,17 @@
 <?php
-
-    class ControllerAdmin extends ControllerSconj{
+    //Objectif : Inserer, mofifier supprimer des phrases dans la BDD  
+    class ControllerAdmin extends ControllerTwigSconj{
 
         public static function InsertPhraseCtrl(){
 
             $twig = ControllerTwigSconj::twigControl();
-        // on va instancier le modele
+            // on va instancier le modele
            $manager = new Sconj_ModelAdmin();
            // on prépare les variables qu'on envoie au template
-           $inserer = $manager->InsertPhrase();
-           echo $twig->render('Admin.twig', ['insererPhrase' => $inserer]);
+           $param = $_POST;
+           $data = $manager->InsertPhrase($param);
+
+           echo $twig->render('Admin.twig');
         }
 
         // renvoie les phrases de sa classe pour l'admin
@@ -21,14 +23,5 @@
             $dataphrase = $manager->getPhrases();
             
             echo $twig->render('Admin.twig', ['arrayphrase' => $dataphrase]);
-        }
-
-        public static function UpdatePhraseCtrl(){
-        //     // le dossier ou on trouve les templates
-        //    $loader = new Twig\Loader\FilesystemLoader('./views');
-        //    // initialiser l'environement Twig
-        //    $twig = new Twig\Environment($loader, ['cache' => false, 'debug' => true]);
-        //    $twig->addExtension(new Twig\Extension\DebugExtension());
-
         }
     }

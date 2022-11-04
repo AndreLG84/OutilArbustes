@@ -24,14 +24,28 @@
             </nav>
         </header>
     {% endblock %}
+    
     <section class="PageAdmin">
+        <section class="BlockIdentification">
+            <h2>Votre espace:</h2>
+        </section>
         <section class="BlockInsert">
             <h2>Ajouter</h2>
-
-            <form action="/Admin" method="POST" class="form-edit">
+            <form action="./Admin" method="POST" class="form-edit">
+                {# <div class="hide">
+                    <label for="conju_classe">classe</label>
+                    <input type="int" name="conju_classe">
+                    <label for="conju_date">date</label>
+                    <input type="date" name="conju_date">
+                    <label for="conju_actif">actif</label>
+                    <select  name="conju_actif">
+                        <option value="0">Non</option>
+                    <option value="1">Oui</option>
+                    </select>
+                </div> #}
 
                 <label for="conju_phrase" class="label-edit">Entrer une phrase</label>
-                <input type="text" name="conju_phrase" class="input-edit" placeholder="Je joue avec les filles">
+                <input type="text" name="conju_phrase" class="input-edit" placeholder="Je joue avec la voiture">
 
                 <label for="conju_reponses" class="label-edit">Entrer les réponses</label>
                 <input type="text" name="conju_reponses" class="input-edit" placeholder="joue, joues, jouons, jouez, jouent">
@@ -57,21 +71,22 @@
 
                 <input type="submit" value="Ajouter" class="btn-edit" id="submit-edit">
             </form>
-
         </section>
-        {{ dump(arrayphrase) }}
         
         <section class="BlocAfficher">
             <h2>Modifier</h2>
             
             <div class="Update">
-            {% for data in arrayphrase %}
-                <p>{{ data.conju_phrase }}</p>
-            {% endfor %}
+                <div id="modifier">
+                    <p id="listphrase"></p>
+                    <div class="iconsmodif">
+                        <span class="material-symbols-outlined">modifier</span>
+                        <span class="material-symbols-outlined">supprimer</span>
+                    </div>
+                </div>
             </div>
-
         </section>
-
     </section>
+    <script src="./views/templates/js/Admin.js"></script>
 </body>
 </html>

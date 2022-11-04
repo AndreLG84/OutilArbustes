@@ -24,6 +24,8 @@ $router->map('GET|POST', '/Phrase', 'ControllerJeu#AfficherPhrase', 'Afficher ph
 //admin
 $router->map('GET|POST', '/Admin', 'ControllerAdmin#InsertPhraseCtrl', 'AjouterUnePrase');
 
+$router->map('GET|POST', '/Admin', 'ControllerAdmin#getPhraseCtrl', 'MofifierUnePrase');
+
 $match = $router->match();
 if($match){
     list($controller, $action) = explode('#', $match['target']);

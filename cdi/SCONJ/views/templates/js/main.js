@@ -1,19 +1,3 @@
-// const demo = document.getElementById('phrasedemo');
-//     // On crée le canal de communication avec le serveur
-// 	// On veut aller sur la database
-// const xhr = new XMLHttpRequest();
-//     // To send a request to a server, you can use the open() and send() methods of the XMLHttpRequest object:
-// xhr.open('GET', './models/ModelJeu.php', true)
-//     //Defines a function to be called when the readyState property changes
-// xhr.onreadystatechange = function () {
-//         // readyState:Holds the status of the XMLHttpRequest    200:"OK"
-//     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-//         demo.innerHTML = xhr.response;
-//         // console.log(JSON.parse(xhr.response));
-//     }
-// }
-// xhr.send();
-
 
 document.getElementById("selectreseau").addEventListener("click", showTemps);
 document.getElementById("selectecole").addEventListener("click", showTemps);

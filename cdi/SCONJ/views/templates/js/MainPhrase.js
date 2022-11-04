@@ -1,5 +1,12 @@
-const BtnRep = document.getElementsByClassName("RepBtn");
+let countclick = document.getElementsByClassName("RepBtn"), count = 0;
+let nbrclick = document.getElementById("nombreClick")
+countclick.onclick = function() {
+    count += 1;
+    nbrclick.innerHTML = " Nombre de click: " + count;
+};
 
+
+const BtnRep = document.getElementsByClassName("RepBtn")
 const arrayBtnRep = Array.from(BtnRep)
 
 arrayBtnRep.forEach(btn => {
@@ -10,15 +17,13 @@ arrayBtnRep.forEach(btn => {
 });
 function verifReponse(btnvalue){
     const reponse = document.getElementById("reponse");
-    console.log(reponse.innerText)
+    // console.log(reponse.innerText)
     const blockRep = document.getElementById("phrase")
     const oldphrase = document.getElementById("avant")
     const phraseCorrect = document.getElementById("apres")
-    const blockVerbe = document.getElementById("hideVerbe")
     const Nextbtn = document.getElementById("Next")
-
+    
     if (btnvalue === reponse.innerText) {
-        // alert('Bonne réponse')
         oldphrase.style.display = "none"
         blockRep.style.backgroundColor = "green"
         phraseCorrect.style.color = "white"
@@ -31,7 +36,6 @@ function verifReponse(btnvalue){
     else {
         // alert('Mauvaise réponse')
         blockRep.style.backgroundColor = "red"
-        blockVerbe.style.backgroundColor = "grey"
-        blockRep.style.color = "white"
     }
 }
+
