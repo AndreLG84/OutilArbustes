@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,13 +25,30 @@
             </nav>
         </header>
     {% endblock %}
-    {% block content1 %}{% endblock %}
+    
+    <section class="PageAdmin">
+        <section class="BlockIdentification">
+            <h2>Votre espace:</h2>
+        </section>
+        <section class="BlocAfficher">
+            <h2>Phrases:</h2>
+            
+            <div class="Update">
+                <div id="modifier">
+                    <li id="listphrase"></li>
+                    <div class="iconsmodif">
+                        <img src="./views/templates/images/delete.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
 
     {% block footer %}
     <footer>
         <img src="./views/templates/images/Rectangle 120.png" alt="Retour" class="retour">
     </footer>
     {% endblock %}
-    
+    <script src="./views/templates/js/Admin.js"></script>
 </body>
 </html>

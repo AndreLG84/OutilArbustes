@@ -9,19 +9,24 @@
            $manager = new Sconj_ModelAdmin();
            // on prépare les variables qu'on envoie au template
            $param = $_POST;
-           $data = $manager->InsertPhrase($param);
+            if (isset($param)){
 
-           echo $twig->render('Admin.twig');
+                $data = $manager->InsertPhrase($param);
+                echo $twig->render('AdminAjouter.twig');
+            }
+            else {
+                echo $twig->render('AdminAjouter.twig');
+            }
         }
 
-        // renvoie les phrases de sa classe pour l'admin
-        public static function getPhraseCtrl(){
+        // suppression les phrases de sa classe pour l'admin
+        public static function supPhraseCtrl(){
             $twig = ControllerTwigSconj::twigControl();
  
             $manager = new Sconj_ModelAdmin();
  
-            $dataphrase = $manager->getPhrases();
+            $dataphrase = $manager->supPhrases();
             
-            echo $twig->render('Admin.twig', ['arrayphrase' => $dataphrase]);
+            echo $twig->render('AdminSupprimer.twig');
         }
     }

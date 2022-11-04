@@ -22,9 +22,9 @@ $router->map('GET|POST', '/', 'ControllerJeu#Accueil', 'choix réseaux/ecole');
 $router->map('GET|POST', '/Phrase', 'ControllerJeu#AfficherPhrase', 'Afficher phrase');
 
 //admin
-$router->map('GET|POST', '/Admin', 'ControllerAdmin#InsertPhraseCtrl', 'AjouterUnePrase');
+$router->map('GET|POST', '/AdminAdd', 'ControllerAdmin#InsertPhraseCtrl', 'AjouterUnePrase');
 
-$router->map('GET|POST', '/Admin', 'ControllerAdmin#getPhraseCtrl', 'MofifierUnePrase');
+$router->map('GET|POST', '/AdminSup', 'ControllerAdmin#supPhraseCtrl', 'SupprimerUnePrase');
 
 $match = $router->match();
 if($match){

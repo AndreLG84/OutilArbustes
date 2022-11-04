@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./views/templates/css/style.css" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Judson" />
+    
     <title>La conjugaison | {% block title %} {% endblock %}</title>
 </head>
 
@@ -29,21 +30,10 @@
         <section class="BlockIdentification">
             <h2>Votre espace:</h2>
         </section>
+        <button id="voirphrases"><a href="./AdminSup"></a>Voir les phrases</button>
         <section class="BlockInsert">
             <h2>Ajouter</h2>
-            <form action="./Admin" method="POST" class="form-edit">
-                {# <div class="hide">
-                    <label for="conju_classe">classe</label>
-                    <input type="int" name="conju_classe">
-                    <label for="conju_date">date</label>
-                    <input type="date" name="conju_date">
-                    <label for="conju_actif">actif</label>
-                    <select  name="conju_actif">
-                        <option value="0">Non</option>
-                    <option value="1">Oui</option>
-                    </select>
-                </div> #}
-
+            <form action="./AdminAdd" method="POST" class="form-edit">
                 <label for="conju_phrase" class="label-edit">Entrer une phrase</label>
                 <input type="text" name="conju_phrase" class="input-edit" placeholder="Je joue avec la voiture">
 
@@ -72,21 +62,12 @@
                 <input type="submit" value="Ajouter" class="btn-edit" id="submit-edit">
             </form>
         </section>
-        
-        <section class="BlocAfficher">
-            <h2>Modifier</h2>
-            
-            <div class="Update">
-                <div id="modifier">
-                    <p id="listphrase"></p>
-                    <div class="iconsmodif">
-                        <span class="material-symbols-outlined">modifier</span>
-                        <span class="material-symbols-outlined">supprimer</span>
-                    </div>
-                </div>
-            </div>
-        </section>
     </section>
-    <script src="./views/templates/js/Admin.js"></script>
+
+    {% block footer %}
+    <footer>
+        <img src="./views/templates/images/Rectangle 120.png" alt="Retour" class="retour">
+    </footer>
+    {% endblock %}
 </body>
 </html>
