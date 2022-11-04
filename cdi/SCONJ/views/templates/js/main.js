@@ -4,6 +4,7 @@ document.getElementById("selectecole").addEventListener("click", showTemps);
 
 function showTemps() {
   document.getElementById("Choix_temps").style.display = "block";
+  document.getElementById("Choix_temps").style.margin = "auto";
   document.getElementById("Choix_phrases").style.height = "80px"; 
   document.getElementById("Choix_phrases").style.margin = "auto";
   document.getElementById("Choix_phrases").style.width = "90%";

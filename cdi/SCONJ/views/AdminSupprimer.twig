@@ -34,14 +34,28 @@
             <h2>Phrases:</h2>
             
             <div class="Update">
-                <div id="modifier">
-                    <li id="listphrase"></li>
-                    <div class="iconsmodif">
-                        <img src="./views/templates/images/delete.png">
+                <ul id="listphrase"></ul>
+            </div>
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Supprimer la phrase</h5>
+                        </div>
+                        <div class="modal-body">
+                            <p>toute suppression est définitive...</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">Annuler</button>
+                            <button type="button" class="btn btn-danger" id="deleteBtn">Supprimer la phrase</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        
     </section>
 
     {% block footer %}
