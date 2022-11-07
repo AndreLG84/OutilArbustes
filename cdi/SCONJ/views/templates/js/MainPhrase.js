@@ -2,9 +2,8 @@ let countclick = document.getElementsByClassName("RepBtn"), count = 0;
 let nbrclick = document.getElementById("nombreClick")
 countclick.onclick = function() {
     count += 1;
-    nbrclick.innerHTML = " Nombre de click: " + count;
+    nbrclick.innerHTML = "nombre de click:" + count;
 };
-
 
 const BtnRep = document.getElementsByClassName("RepBtn")
 const arrayBtnRep = Array.from(BtnRep)
@@ -15,9 +14,9 @@ arrayBtnRep.forEach(btn => {
         verifReponse(btnvalue)
     })
 });
+
 function verifReponse(btnvalue){
     const reponse = document.getElementById("reponse");
-    // console.log(reponse.innerText)
     const blockRep = document.getElementById("phrase")
     const oldphrase = document.getElementById("avant")
     const phraseCorrect = document.getElementById("apres")
@@ -33,9 +32,10 @@ function verifReponse(btnvalue){
         phraseCorrect.style.height = "100%"
         Nextbtn.style.display = "block"
     }
+
     else {
-        // alert('Mauvaise réponse')
-        blockRep.style.backgroundColor = "red"
+        document.getElementById(btnvalue).style.backgroundColor='red';
+        document.getElementById(btnvalue).style.color='white';
     }
 }
 

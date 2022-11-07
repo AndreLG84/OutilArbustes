@@ -1,5 +1,4 @@
 <?php
-// require_once './models/Sconj_Model.php';
 
     try{
         $db = new PDO('mysql:host=localhost;dbname=stage_sconj;charset=utf8','root');

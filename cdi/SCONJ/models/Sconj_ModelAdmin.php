@@ -5,7 +5,7 @@
         public function InsertPhrase($param) {
             $db= $this->getDb();
 
-            $test = 1;
+            $classe = 1;
             $date = date('d/m/yy');
             $actif = false;
 
@@ -16,19 +16,18 @@
             $insert->bindParam(':conju_reponse', $param['conju_reponse'], PDO::PARAM_STR);
             $insert->bindParam(':conju_niveau', $param['conju_niveau'], PDO::PARAM_INT);
             $insert->bindParam(':conju_temps', $param['conju_temps'], PDO::PARAM_STR);
-            $insert->bindParam(':conju_classe', $test, PDO::PARAM_INT);
+            $insert->bindParam(':conju_classe', $classe, PDO::PARAM_INT);
             $insert->bindParam(':conju_date', $date, PDO::PARAM_STR);
             $insert->bindParam(':conju_actif', $actif, PDO::PARAM_INT);
 
             $insert -> execute();
-            var_dump($insert); 
             echo 'Phrase ajoutée';
         }
 
         public function supPhrases(){
             $db= $this->getDb();
 
-            $req = $db->prepare("DELETE FROM `cdi_conju` WHERE `conju_phrase` =  ");
+            $req = $db->prepare("DELETE FROM `cdi_conju` WHERE `conju_phrase` = :id");
 
             // $req -> execute();
         }

@@ -1,22 +1,16 @@
 <?php
-    //Objectif : Inserer, mofifier supprimer des phrases dans la BDD  
+    //Objectif : Inserer des phrases dans la BDD  
     class ControllerAdmin extends ControllerTwigSconj{
 
         public static function InsertPhraseCtrl(){
-
             $twig = ControllerTwigSconj::twigControl();
             // on va instancier le modele
            $manager = new Sconj_ModelAdmin();
            // on prépare les variables qu'on envoie au template
-           $param = $_POST;
-            if (isset($param)){
 
-                $data = $manager->InsertPhrase($param);
-                echo $twig->render('AdminAjouter.twig');
-            }
-            else {
-                echo $twig->render('AdminAjouter.twig');
-            }
+            if (isset($_POST)) $data = $manager->InsertPhrase($_POST);
+            echo $twig->render('AdminAjouter.twig');
+        
         }
 
         // suppression les phrases de sa classe pour l'admin

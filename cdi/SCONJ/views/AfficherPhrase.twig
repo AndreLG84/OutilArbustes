@@ -7,7 +7,6 @@
         {% for i in 0..0 %}
         <div class="temps_niveau">
             <p>Temps:&nbsp;{{ objetphrase[i].conju_temps }}</p>
-            <p>Niveau:&nbsp;{{ objetphrase[i].conju_niveau }}</p>
         </div>
         <div class="phrase" id="phrase">
             <div id="avant">
@@ -18,23 +17,23 @@
             </div>
         </div>
         <div class="reponses">
-        <span id="reponse" hidden>{{ reponse }}</span>
-        {% for dataRep in reponses %}
-            <button  class="RepBtn" id="RepBtn">{{ dataRep }}</button>
-        {% endfor %}
+            <span id="reponse" hidden>{{ reponse }}</span>
+            {% for dataRep in reponses %}
+            <button  class="RepBtn" id="{{ dataRep }}">{{ dataRep }}</button>
+            {% endfor %}
         </div>
 
         <div class="suivant">
             <button id="Next">Suivant</button>
         </div>
-    
+        <div class="nombrePhrases">
+            <p>1/5</p>
+        </div>
         <div class="click">
-            <span id="nombreClick">Nombre de click:</span>
-            <span id="numerophrase">1/5 </span>
+            <span id="nombreClick"></span>
         </div>
         {% endfor %}
     </section>
-
     <script src="./views/templates/js/MainPhrase.js"></script>
 </body>
 {% endblock %}

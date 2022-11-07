@@ -34,7 +34,7 @@
             $phraseafter = substr(strstr($phrasecomplete,$verbe),strlen($verbe));
             
             $reponses = $objetphrases[$indicealeatoire]->getConju_reponses();
-            $reponsexplode = explode(",", $reponses);
+            $reponsexplode = explode(", ", $reponses);
 
             $reponse = $objetphrases[$indicealeatoire]->getConju_reponse();
 
