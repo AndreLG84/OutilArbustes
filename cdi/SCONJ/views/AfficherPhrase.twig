@@ -3,43 +3,37 @@
 {% block content1 %}
 <body>
     <section class="Jeu" id="Jeu">
-        {% set phraseLength = objetphrase|length %}
-        {% for i in 0..0 %}
+        {% set nbPhrases = phrase|length %}
+        {% for i in 0..(nbPhrases-2) %}
         <div class="temps_niveau">
-            <p>Temps:&nbsp;{{ objetphrase[i].conju_temps }}</p>
+            <p>Temps:&nbsp;</p>
         </div>
         <div class="phrase" id="phrase">
             <div id="avant">
-                <p id="phraseTest">{{ phraseTps }}</p><span id="hideVerbe"></span><p id ="phraseTest">{{ phraseTpsAfter }}</p>
+                <p id="phraseTest">{{ before[i] }}</p><span id="hideVerbe"></span><p id ="phraseTest">{{ after[i] }}</p>
             </div>
             <div id="apres">
-                <p> {{ phrasecomplete }} </p>
+                <p> {{ phrase[i] }} </p>
             </div>
         </div>
         <div class="reponses">
-            <span id="reponse" hidden>{{ reponse }}</span>
-            {% for dataRep in reponses %}
+            <span id="reponse" hidden></span>
+            {% for dataRep in reponses[i] %}
             <button  class="RepBtn" id="{{ dataRep }}">{{ dataRep }}</button>
             {% endfor %}
         </div>
-
+        {% endfor %}
         <div class="suivant">
-            {% for phrasesuivante in objetphrase %}
             <button id="Next" class="">Suivant</button>
-            {% endfor %}
-            
         </div>
-
         <div class="nombrePhrases">
-            <p>1/5</p>
+            <p></p>
         </div>
         <div class="click">
             <span id="nombreClick"></span>
         </div>
-        {% endfor %}
-    </section>
-        <div id="phrasesuivante"></div>
         
+    </section>
     <script src="./views/templates/js/MainPhrase.js"></script>
 </body>
 {% endblock %}

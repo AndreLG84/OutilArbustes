@@ -24,20 +24,21 @@
             $param2 = $manager->getConju_temps();
 
             $objetphrases = $manager->getPhrases($conju_temps);
-
+            
             $indicealeatoire=0;
 
-            $verbe = $objetphrases[$indicealeatoire]->getConju_reponse();
-            $phrasecomplete = $objetphrases[$indicealeatoire]->getConju_phrase();
+            $nbphrasesdansbd=count($objetphrases);
+            $nbphrases=min(5,$nbphrasesdansbd);
 
-            $phraseavant = strstr($phrasecomplete, $verbe, true);
-            $phraseafter = substr(strstr($phrasecomplete,$verbe),strlen($verbe));
-            
-            $reponses = $objetphrases[$indicealeatoire]->getConju_reponses();
-            $reponsexplode = explode(", ", $reponses);
+            $verbes=array();$phrases=array();
+            for ($i=0;$i<$nbphrases;$i++) :
+               $verbe[$i] = $objetphrases[$i]->getConju_reponse();
+               $phrase[$i] = $objetphrases[$i]->getConju_phrase();
+               $before[$i] = strstr($phrase[$i], $verbe[$i], true);
+               $after[$i] = substr(strstr($phrase[$i],$verbe[$i]),strlen($verbe[$i]));
+               $reponsexplode[$i] = explode(", ", $objetphrases[$i]->getConju_reponses());
+            endfor;
 
-            $reponse = $objetphrases[$indicealeatoire]->getConju_reponse();
-
-            echo $twig->render('AfficherPhrase.twig',['conju_temps' => $param2, 'phraseTps' => $phraseavant, 'phraseTpsAfter' => $phraseafter, 'objetphrase' => $objetphrases, 'reponses' => $reponsexplode, 'reponse' => $reponse, 'phrasecomplete' => $phrasecomplete]);
+            echo $twig->render('AfficherPhrase.twig',['phrase' => $phrase, 'verbe' => $verbe,'before' => $before, 'after' => $after, 'reponses' => $reponsexplode, 'indicealeatoire' => $indicealeatoire]);
         }
     }

@@ -19,11 +19,13 @@ function initData(){
             // console.log(JSON.parse(xhr.response));
             let listDom =''
             for(let data of datas){
-                listDom += '<li class="list-group"><h2 class="titre">' + data.conju_phrase + '</h2><div class="icones"><div><a href="#" id="' + data.conju_id + '" title="Delete" class="btn-delete-phrase"><img src="./views/templates/images/icones/delete.svg" alt="" height="30px"></a></div></div></li>'
+                listDom += '<li class="list-group"><h2 class="titre">' + data.conju_phrase + '</h2><div class="icones"><div><a href=""?id=' + data.conju_id + '" title="Edit"><img src="./views/templates/images/icones/edit.svg" alt="" height="30px"></a> </div><div><a href="#" ?id="' + data.conju_id + '" title="Delete" class="btn-delete-phrase"><img src="./views/templates/images/icones/delete.svg" alt="" height="30px"></a></div></div></li>'
             }
             listphrase.innerHTML = listDom
 
-            hideModal(myModal)
+            closeAction(btnCloseModal, function(){
+                hideModal(myModal)
+            })
 
             const btnDelete = document.getElementsByClassName('btn-delete-phrase')
             const closeBtn = document.getElementById('closeBtn')

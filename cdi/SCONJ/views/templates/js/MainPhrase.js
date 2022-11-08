@@ -15,6 +15,7 @@ arrayBtnRep.forEach(btn => {
         verifReponse(btnvalue)
     })
 });
+console.log(arrayBtnRep)
 
 function verifReponse(btnvalue){
     const reponse = document.getElementById("reponse");
@@ -32,6 +33,8 @@ function verifReponse(btnvalue){
         phraseCorrect.style.justifyContent = "center"
         phraseCorrect.style.height = "100%"
         Nextbtn.style.display = "block"
+        document.getElementById(btnvalue).style.backgroundColor='green';
+        document.getElementById(btnvalue).style.color='white';
     }
 
     else {
@@ -43,7 +46,6 @@ function verifReponse(btnvalue){
 // fonction phrase suivante
 
 const suivant = document.getElementById('Next')
-console.log(suivant)
 
 
 
