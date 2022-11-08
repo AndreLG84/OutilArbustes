@@ -306,8 +306,15 @@ footer> img {
     border-radius: 5px;
 }
 /*AdminSup*/
+.pagePhrases {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
 #voirphrases {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 1%;
     padding: 0.8%;
     border-radius: 5px;

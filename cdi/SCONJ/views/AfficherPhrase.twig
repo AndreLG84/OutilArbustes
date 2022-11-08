@@ -24,8 +24,12 @@
         </div>
 
         <div class="suivant">
-            <button id="Next">Suivant</button>
+            {% for phrasesuivante in objetphrase %}
+            <button id="Next" class="">Suivant</button>
+            {% endfor %}
+            
         </div>
+
         <div class="nombrePhrases">
             <p>1/5</p>
         </div>
@@ -34,6 +38,8 @@
         </div>
         {% endfor %}
     </section>
+        <div id="phrasesuivante"></div>
+        
     <script src="./views/templates/js/MainPhrase.js"></script>
 </body>
 {% endblock %}

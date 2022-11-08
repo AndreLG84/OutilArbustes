@@ -5,6 +5,7 @@ countclick.onclick = function() {
     nbrclick.innerHTML = "nombre de click:" + count;
 };
 
+// mettre en vert la bonne reponse et rouge la mauvaise
 const BtnRep = document.getElementsByClassName("RepBtn")
 const arrayBtnRep = Array.from(BtnRep)
 
@@ -38,4 +39,12 @@ function verifReponse(btnvalue){
         document.getElementById(btnvalue).style.color='white';
     }
 }
+
+// fonction phrase suivante
+
+const suivant = document.getElementById('Next')
+console.log(suivant)
+
+
+
 

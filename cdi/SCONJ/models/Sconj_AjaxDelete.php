@@ -6,15 +6,14 @@
     // prepare= protege contre les requetes
     $delete = $db->prepare("DELETE FROM `cdi_conju` WHERE conju_id = :id");
 
-    $delete->bindParam(':id', $id, PDO::PARAM_INT);
-
+    $delete->bindParam('id', $id, PDO::PARAM_INT);
     $delete->execute();
+    var_dump($delete);
+    // $data=[];
 
-    $data=[];
-
-    $data['msg']='L\'article\a\été supprimé';
-    var_dump($data);
-    echo json_encode($data);
+    // $data['msg']='L\'article\a\été supprimé';
+    // var_dump($data);
+    // echo json_encode($data);
     
 
 

@@ -4,7 +4,7 @@ function initData(){
     const listphrase = document.getElementById('listphrase')
     const btnCloseModal = document.getElementById('closeBtn')
     const myModal = document.getElementById('myModal')
-    const deleteBtn = document.getElementById('deleteBtn')
+    const deleteB = document.getElementById('deletePhrase')
         // On crée le canal de communication avec le serveur
         // On veut aller sur la database
     let xhr = new XMLHttpRequest();
@@ -19,17 +19,14 @@ function initData(){
             // console.log(JSON.parse(xhr.response));
             let listDom =''
             for(let data of datas){
-                listDom += '<li class="list-group"><h2 class="titre">' + data.conju_phrase + '</h2><div class="icones"><div><a href="?id=' + data.conju_id + '" title="Edit"><img src="./views/templates/images/icones/edit.svg" alt="" height="30px"></a></div><div><a href="#" data-id="' + data.conju_id + '" title="Delete" class="btn-delete-post"><img src="./views/templates/images/icones/delete.svg" alt="" height="30px"></a> </div> </div> </li>'
+                listDom += '<li class="list-group"><h2 class="titre">' + data.conju_phrase + '</h2><div class="icones"><div><a href="#" id="' + data.conju_id + '" title="Delete" class="btn-delete-phrase"><img src="./views/templates/images/icones/delete.svg" alt="" height="30px"></a></div></div></li>'
             }
             listphrase.innerHTML = listDom
 
-            const btnDelete = document.getElementsByClassName('btn-delete-post')
+            hideModal(myModal)
 
+            const btnDelete = document.getElementsByClassName('btn-delete-phrase')
             const closeBtn = document.getElementById('closeBtn')
-
-            closeAction(btnCloseModal, function(){
-                hideModal(myModal)
-            })
 
             for (const element of btnDelete) {
                 element.addEventListener('click', function (e) {
@@ -41,7 +38,7 @@ function initData(){
                         hideModal(myModal)
                     })   
 
-                    deleteBtn.addEventListener('click', function () {
+                    deleteB.addEventListener('click', function () {
                         deletePhrase(id,listphrase)
                         myModal.style.display = 'none'
                     })
@@ -81,33 +78,25 @@ function alertBox(type, message){
 }
 
 function deletePhrase(id, afterElement){
-    const myModal = document.getElementById('myModal') 
-    const btnYes = document.getElementById('deleteBtn')
-
-    btnYes.addEventListener('click', function(){
-        const xhr = new XMLHttpRequest();
-        alert('toto')
-        xhr.open('POST', './models/Sconj_AjaxDelete.php', true)
-        xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-        xhr.send("id" + id)
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // let data = JSON.parse(xhr.responseText)
-
-                initData()
-
-                if(!document.getElementById('alert-box')){
-                    btnYes.parentNode.remove();
-                    afterElement.before(alertBox('success', 'Phrase supprimée :)'))
-                        
-                } else {
-                    document.getElementById('alert-box').style.display = 'block'
-                }
-
-                setTimeout(() => {
-                    document.getElementById('alert-box').style.display = 'none'
-                }, 3000);
+    // const myModal = document.getElementById('myModal') 
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', './models/Sconj_AjaxDelete.php', true)
+    xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            initData()
+            
+            if(!document.getElementById('alert-box')){
+                afterElement.before(alertBox('success', 'L\'article a bien été supprimé :)'))
+                    
+            } else {
+                document.getElementById('alert-box').style.display = 'block'
             }
+    
+            setTimeout(() => {
+                document.getElementById('alert-box').style.display = 'none'
+            }, 3000);
         }
-    })
+    }
+    xhr.send("id=" + id)
 }
